@@ -1,0 +1,12 @@
+node_modules
+_raw
+src
+.git
+.impeccable
+.playwright-mcp
+package.json
+package-lock.json
+wrangler.jsonc
+.assetsignore
+.gitignore
+*.md
