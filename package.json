@@ -1,0 +1,16 @@
+{
+  "name": "fragata",
+  "version": "1.0.0",
+  "description": "Webs La Fragata Giratorio y Fish Market — Festival de Ceviches 2026",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i src/input.css -o assets/css/styles.css --watch & npx --yes serve -l 5391 .",
+    "build": "npx @tailwindcss/cli -i src/input.css -o assets/css/styles.css --minify"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "private": true
+}

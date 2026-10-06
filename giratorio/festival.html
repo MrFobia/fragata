@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es" data-brand="giratorio">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Festival de Ceviches de Alta Cocina · La Fragata Giratorio</title>
+  <meta name="description" content="Los platos del Festival de Ceviches de Alta Cocina, creados junto al chef peruano Carlos Accinelli. Octubre y noviembre en La Fragata Giratorio.">
+  <meta name="theme-color" content="#17213a">
+  <link rel="icon" href="../assets/img/giratorio/barco-azul.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+Canadian+Aboriginal:wght@300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/festival-page.js"></script>
+</head>
+<body class="overflow-x-clip antialiased">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-on-dark">Saltar al contenido</a>
+
+  <div class="light-rig" aria-hidden="true"></div>
+  <div class="light-rig-night" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <a href="./" class="flex items-center gap-3" aria-label="La Fragata Giratorio, inicio">
+      <img src="../assets/img/giratorio/barco-azul.png" alt="" width="487" height="390" class="logo-dark h-7 w-auto">
+      <img src="../assets/img/giratorio/barco-blanco.png" alt="" width="487" height="389" class="logo-light h-7 w-auto">
+      <span class="font-display text-[1.05rem] tracking-[0.12em]">LA FRAGATA</span>
+    </a>
+    <nav aria-label="Principal" class="col-start-2 hidden items-center gap-8 text-[0.95rem] lg:flex">
+      <a class="nav-link" href="festival.html" aria-current="page">Festival</a>
+      <a class="nav-link" href="eventos.html">Eventos</a>
+      <a class="nav-link" href="contacto.html">Contacto</a>
+      <span class="muted cursor-not-allowed" aria-disabled="true" title="Próximamente">Carta</span>
+      <span class="muted cursor-not-allowed" aria-disabled="true" title="Próximamente">Gift Cards</span>
+    </nav>
+    <div class="col-start-3 flex items-center justify-self-end gap-3">
+      <a href="reservas.html" class="btn btn-book hidden min-h-[2.75rem] px-5 text-[0.95rem] sm:inline-flex" data-header-book>Reservar mesa</a>
+      <button type="button" class="grid size-11 place-items-center lg:hidden" data-menu-toggle aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div id="menu" class="menu-sheet lg:hidden" data-open="false">
+    <button type="button" class="absolute right-4 top-4 grid size-11 place-items-center" data-menu-toggle aria-label="Cerrar menú">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav aria-label="Menú" class="grid gap-1 font-display text-[2.6rem] leading-[1.15]">
+      <a href="./">Inicio</a>
+      <a href="festival.html" aria-current="page">Festival</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <p class="mt-8 text-[0.95rem] text-on-dark/70">Carta y Gift Cards llegan pronto.</p>
+  </div>
+
+  <main id="contenido">
+    <section data-hour="15.2" class="relative overflow-hidden pt-24 lg:grid lg:min-h-[88svh] lg:grid-cols-12 lg:items-center lg:pt-16">
+      <div class="layer-text px-5 lg:col-span-6 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))]">
+        <h1 class="reveal text-[clamp(2.6rem,10vw,5.5rem)] leading-[0.98]">Festival de Ceviches de alta cocina</h1>
+        <p class="reveal mt-4 text-[1.05rem]">Octubre y noviembre · chef Carlos Accinelli</p>
+        <p class="reveal muted mt-5 max-w-[40ch] text-[1.08rem] leading-relaxed">Más de 15 platos creados junto al chef peruano Carlos Accinelli para explorar nuevos sabores. Esta temporada, el ceviche también toma el lugar del plato fuerte.</p>
+        <div class="reveal mt-8 flex flex-wrap gap-3" data-inline-book>
+          <a href="reservas.html" class="btn btn-book">Reservar mesa
+            <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#ya-probaste" class="btn btn-ghost">¿Ya probaste?</a>
+        </div>
+      </div>
+      <div class="photo-frame crop-in mt-8 aspect-square lg:col-span-6 lg:mt-0 lg:aspect-auto lg:h-[88svh]">
+        <img src="../assets/img/giratorio/platos-ia/costa-limena.webp" alt="Ceviche Costa Limeña visto desde arriba sobre mantel de lino, en plato de cerámica azul"
+          width="1200" height="1200" class="photo photo-hero" style="view-transition-name: plato-costa-limena">
+      </div>
+    </section>
+
+    <section data-hour="16.4" class="relative py-16 lg:py-24" aria-labelledby="platos-titulo">
+      <div class="layer-text mx-auto max-w-7xl px-5 lg:px-10">
+        <h2 id="platos-titulo" class="sr-only">Platos del festival</h2>
+        <div class="sticky top-[4.6rem] z-[4] -mx-5 bg-[var(--cloth)] px-5 py-3 lg:static lg:mx-0 lg:bg-transparent lg:px-0">
+          <div class="chips" role="tablist" aria-label="Categorías del festival" data-chips>
+            <span class="chip-indicator" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-5">
+            <p class="carta-title reveal" aria-hidden="true" data-cat-title></p>
+            <p class="muted mt-6 max-w-[40ch] text-[1rem] leading-relaxed" data-cat-note aria-live="polite"></p>
+            <div class="carta-preview mt-10 hidden lg:block" data-preview aria-hidden="true">
+              <div class="photo-frame crop-in">
+                <img src="../assets/img/giratorio/platos-ia/costa-limena-640.webp" alt="" width="640" height="640" class="photo" data-preview-img>
+                <p class="photo-cap"><span data-preview-n>N.º 01</span><span data-preview-name></span></p>
+              </div>
+            </div>
+          </div>
+          <ul class="lg:col-span-7" role="list" data-gallery></ul>
+        </div>
+        <div class="mt-20 max-w-3xl" data-extras></div>
+        <p class="muted mt-14 text-[0.9rem]">Precios en pesos colombianos. Fotos de los platos del festival editadas a partir de fotos tomadas en el restaurante.</p>
+      </div>
+    </section>
+
+    <section id="ya-probaste" data-hour="20.6" class="relative px-5 pb-36 pt-20 lg:pb-28 lg:pt-28" aria-labelledby="probaste-titulo">
+      <div class="layer-text mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:px-5">
+        <div class="lg:col-span-4">
+          <h2 id="probaste-titulo" class="reveal text-[clamp(2.25rem,7vw,4rem)] leading-[1.02]">¿Ya probaste?</h2>
+          <p class="reveal muted mt-4 text-[1.1rem] leading-relaxed">Cuéntanos tu favorito.</p>
+        </div>
+        <div class="lg:col-span-7 lg:col-start-6">
+          <form class="on-card grid gap-9 rounded-[1.75rem] bg-paper p-5 text-ink sm:p-8" novalidate data-probaste>
+            <fieldset class="grid gap-5">
+              <legend class="sr-only">Tus datos</legend>
+              <div class="field">
+                <label for="p-nombre">Nombre</label>
+                <input id="p-nombre" name="nombre" class="input" autocomplete="name" required>
+              </div>
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div class="field">
+                  <label for="p-tel">Teléfono</label>
+                  <input id="p-tel" name="telefono" class="input" type="tel" inputmode="tel" autocomplete="tel" required>
+                </div>
+                <div class="field">
+                  <label for="p-correo">Correo</label>
+                  <input id="p-correo" name="correo" class="input" type="email" inputmode="email" autocomplete="email">
+                </div>
+              </div>
+              <div class="field">
+                <label for="p-plato">¿Qué plato probaste?</label>
+                <select id="p-plato" name="plato" class="input" required data-dish-select>
+                  <option value="">Elige un plato</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <div class="rule"></div>
+
+            <fieldset class="grid gap-7">
+              <legend class="sr-only">Califica el plato de 1 a 5</legend>
+              <div class="field" data-scale="wow"><span class="text-[0.95rem] font-medium" id="l-wow">¿Te generó un efecto ¡WOW! el sabor?</span></div>
+              <div class="field" data-scale="visual"><span class="text-[0.95rem] font-medium" id="l-visual">¿Visualmente es atractivo?</span></div>
+              <div class="field" data-scale="textura"><span class="text-[0.95rem] font-medium" id="l-textura">¿Te gustó la textura del plato?</span></div>
+            </fieldset>
+
+            <div class="rule"></div>
+
+            <fieldset class="grid gap-5">
+              <legend class="sr-only">Tus ideas para el plato</legend>
+              <div class="field">
+                <label for="p-quitar">¿Le quitarías algo?</label>
+                <textarea id="p-quitar" name="quitar" class="input" rows="2"></textarea>
+              </div>
+              <div class="field">
+                <label for="p-agregar">¿Le agregarías algo?</label>
+                <textarea id="p-agregar" name="agregar" class="input" rows="2"></textarea>
+              </div>
+              <div class="field">
+                <label for="p-cambiar">¿Qué le cambiarías?</label>
+                <textarea id="p-cambiar" name="cambiar" class="input" rows="2"></textarea>
+              </div>
+            </fieldset>
+
+            <div class="rule"></div>
+
+            <fieldset class="grid gap-7">
+              <legend class="sr-only">Recomendación</legend>
+              <div class="field" data-yesno="recomendar"><span class="text-[0.95rem] font-medium" id="l-recomendar">¿Se lo recomendarías a alguien más?</span></div>
+              <div class="field" data-yesno="volver"><span class="text-[0.95rem] font-medium" id="l-volver">¿Volverías y pedirías este plato nuevamente?</span></div>
+            </fieldset>
+
+            <div class="grid gap-2">
+              <label class="check">
+                <input type="checkbox" name="datos" required>
+                <span>Autorizo el tratamiento de mis datos personales.</span>
+              </label>
+              <p class="field-error" data-error-for="datos" hidden>Necesitamos tu autorización para guardar tus respuestas.</p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <button type="submit" class="btn bg-ink text-on-dark">Enviar mi opinión</button>
+              <p class="field-error" data-form-error hidden></p>
+            </div>
+          </form>
+
+          <div class="hidden rounded-[1.75rem] bg-paper p-8 text-ink" data-probaste-ok tabindex="-1">
+            <p class="font-display text-[2.25rem] leading-tight">Gracias por contarnos.</p>
+            <p class="mt-3 text-[1.05rem] leading-relaxed text-paper-muted" data-ok-text></p>
+            <a href="reservas.html" class="btn btn-book mt-8">Reservar otra mesa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative px-5 pb-32 lg:pb-12">
+    <div class="layer-text mx-auto flex max-w-7xl flex-col gap-6 border-t border-current/15 pt-8 text-[0.95rem] lg:flex-row lg:items-center lg:justify-between lg:px-5">
+      <img src="../assets/img/giratorio/logo-blanco.png" alt="La Fragata Giratorio" width="900" height="730" loading="lazy" class="h-20 w-auto self-start object-contain lg:self-center">
+      <div class="flex flex-wrap gap-x-8 gap-y-3">
+        <a class="underline" href="contacto.html">Contacto y horarios</a>
+        <a class="underline" href="https://instagram.com/lafragatagiratorio" target="_blank" rel="noopener">Instagram @lafragatagiratorio</a>
+        <span class="muted">Parte de Grupo Fragata</span>
+        <a class="muted underline" href="https://wa.me/573102145472" target="_blank" rel="noopener">Reservas por WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="book-bar sm:hidden" data-hidden="false">
+    <a href="reservas.html" class="btn btn-book flex-1">Reservar mesa</a>
+    <a href="#ya-probaste" class="btn btn-ghost">¿Ya probaste?</a>
+  </div>
+
+  <dialog class="sheet" aria-labelledby="sheet-titulo" data-sheet>
+    <div class="relative">
+      <button type="button" class="absolute right-4 top-4 z-10 grid size-11 place-items-center rounded-full bg-paper/90" data-sheet-close aria-label="Cerrar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="grid aspect-square place-items-center overflow-hidden bg-paper-2 sm:aspect-[4/3]" data-sheet-media></div>
+      <div class="p-6 sm:p-8">
+        <h3 id="sheet-titulo" class="text-[2.25rem] leading-tight" data-sheet-name></h3>
+        <p class="mt-3 text-[1.05rem] leading-relaxed" data-sheet-desc></p>
+        <p class="price mt-4 text-[1.35rem]" data-sheet-price></p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="reservas.html" class="btn btn-book">Reservar para probarlo</a>
+          <a href="#ya-probaste" class="btn shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--brand-ink)_30%,transparent)]" data-sheet-rate>Ya lo probé</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

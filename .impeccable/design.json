@@ -1,0 +1,962 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T02:53:00+00:00",
+  "title": "Design System: La Fragata Giratorio",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta Marina",
+        "tonalRamp": [
+          "oklch(15% 0.050 266.4)",
+          "oklch(25% 0.050 266.4)",
+          "oklch(35% 0.050 266.4)",
+          "oklch(45% 0.050 266.4)",
+          "oklch(58% 0.050 266.4)",
+          "oklch(70% 0.050 266.4)",
+          "oklch(83% 0.050 266.4)",
+          "oklch(95% 0.050 266.4)"
+        ],
+        "canonical": "oklch(25.2% 0.050 266.4)"
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Azul Fragata",
+        "tonalRamp": [
+          "oklch(15% 0.128 266.6)",
+          "oklch(25% 0.128 266.6)",
+          "oklch(35% 0.128 266.6)",
+          "oklch(45% 0.128 266.6)",
+          "oklch(58% 0.128 266.6)",
+          "oklch(70% 0.128 266.6)",
+          "oklch(83% 0.128 266.6)",
+          "oklch(95% 0.128 266.6)"
+        ],
+        "canonical": "oklch(37.6% 0.128 266.6)"
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Azul Ventanal",
+        "tonalRamp": [
+          "oklch(15% 0.082 260.4)",
+          "oklch(25% 0.082 260.4)",
+          "oklch(35% 0.082 260.4)",
+          "oklch(45% 0.082 260.4)",
+          "oklch(58% 0.082 260.4)",
+          "oklch(70% 0.082 260.4)",
+          "oklch(83% 0.082 260.4)",
+          "oklch(95% 0.082 260.4)"
+        ],
+        "canonical": "oklch(53.0% 0.082 260.4)"
+      },
+      "wine": {
+        "role": "tertiary",
+        "displayName": "Vino Reserva",
+        "tonalRamp": [
+          "oklch(15% 0.096 0.7)",
+          "oklch(25% 0.096 0.7)",
+          "oklch(35% 0.096 0.7)",
+          "oklch(45% 0.096 0.7)",
+          "oklch(58% 0.096 0.7)",
+          "oklch(70% 0.096 0.7)",
+          "oklch(83% 0.096 0.7)",
+          "oklch(95% 0.096 0.7)"
+        ],
+        "canonical": "oklch(29.9% 0.096 0.7)"
+      },
+      "wine-deep": {
+        "role": "tertiary",
+        "displayName": "Vino Profundo",
+        "tonalRamp": [
+          "oklch(15% 0.113 357.5)",
+          "oklch(25% 0.113 357.5)",
+          "oklch(35% 0.113 357.5)",
+          "oklch(45% 0.113 357.5)",
+          "oklch(58% 0.113 357.5)",
+          "oklch(70% 0.113 357.5)",
+          "oklch(83% 0.113 357.5)",
+          "oklch(95% 0.113 357.5)"
+        ],
+        "canonical": "oklch(34.7% 0.113 357.5)"
+      },
+      "olive": {
+        "role": "neutral",
+        "displayName": "Oliva Atardecer",
+        "tonalRamp": [
+          "oklch(15% 0.068 110.7)",
+          "oklch(25% 0.068 110.7)",
+          "oklch(35% 0.068 110.7)",
+          "oklch(45% 0.068 110.7)",
+          "oklch(58% 0.068 110.7)",
+          "oklch(70% 0.068 110.7)",
+          "oklch(83% 0.068 110.7)",
+          "oklch(95% 0.068 110.7)"
+        ],
+        "canonical": "oklch(49.7% 0.068 110.7)"
+      },
+      "cloth-noon": {
+        "role": "neutral",
+        "displayName": "Lino de Mediodía",
+        "tonalRamp": [
+          "oklch(15% 0.008 253.9)",
+          "oklch(25% 0.008 253.9)",
+          "oklch(35% 0.008 253.9)",
+          "oklch(45% 0.008 253.9)",
+          "oklch(58% 0.008 253.9)",
+          "oklch(70% 0.008 253.9)",
+          "oklch(83% 0.008 253.9)",
+          "oklch(95% 0.008 253.9)"
+        ],
+        "canonical": "oklch(94.1% 0.008 253.9)"
+      },
+      "cloth-afternoon": {
+        "role": "neutral",
+        "displayName": "Lino de Tarde",
+        "tonalRamp": [
+          "oklch(15% 0.011 256.7)",
+          "oklch(25% 0.011 256.7)",
+          "oklch(35% 0.011 256.7)",
+          "oklch(45% 0.011 256.7)",
+          "oklch(58% 0.011 256.7)",
+          "oklch(70% 0.011 256.7)",
+          "oklch(83% 0.011 256.7)",
+          "oklch(95% 0.011 256.7)"
+        ],
+        "canonical": "oklch(91.7% 0.011 256.7)"
+      },
+      "cloth-late": {
+        "role": "neutral",
+        "displayName": "Lino Dorado",
+        "tonalRamp": [
+          "oklch(15% 0.034 110.9)",
+          "oklch(25% 0.034 110.9)",
+          "oklch(35% 0.034 110.9)",
+          "oklch(45% 0.034 110.9)",
+          "oklch(58% 0.034 110.9)",
+          "oklch(70% 0.034 110.9)",
+          "oklch(83% 0.034 110.9)",
+          "oklch(95% 0.034 110.9)"
+        ],
+        "canonical": "oklch(81.2% 0.034 110.9)"
+      },
+      "cloth-blue-hour": {
+        "role": "neutral",
+        "displayName": "Hora Azul",
+        "tonalRamp": [
+          "oklch(15% 0.041 267.0)",
+          "oklch(25% 0.041 267.0)",
+          "oklch(35% 0.041 267.0)",
+          "oklch(45% 0.041 267.0)",
+          "oklch(58% 0.041 267.0)",
+          "oklch(70% 0.041 267.0)",
+          "oklch(83% 0.041 267.0)",
+          "oklch(95% 0.041 267.0)"
+        ],
+        "canonical": "oklch(32.7% 0.041 267.0)"
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "Papel Claro",
+        "tonalRamp": [
+          "oklch(15% 0.006 255.5)",
+          "oklch(25% 0.006 255.5)",
+          "oklch(35% 0.006 255.5)",
+          "oklch(45% 0.006 255.5)",
+          "oklch(58% 0.006 255.5)",
+          "oklch(70% 0.006 255.5)",
+          "oklch(83% 0.006 255.5)",
+          "oklch(95% 0.006 255.5)"
+        ],
+        "canonical": "oklch(95.7% 0.006 255.5)"
+      },
+      "muted-on-light": {
+        "role": "neutral",
+        "displayName": "Tinta Suave",
+        "tonalRamp": [
+          "oklch(15% 0.066 262.5)",
+          "oklch(25% 0.066 262.5)",
+          "oklch(35% 0.066 262.5)",
+          "oklch(45% 0.066 262.5)",
+          "oklch(58% 0.066 262.5)",
+          "oklch(70% 0.066 262.5)",
+          "oklch(83% 0.066 262.5)",
+          "oklch(95% 0.066 262.5)"
+        ],
+        "canonical": "oklch(39.5% 0.066 262.5)"
+      },
+      "muted-on-night": {
+        "role": "neutral",
+        "displayName": "Niebla Nocturna",
+        "tonalRamp": [
+          "oklch(15% 0.020 258)",
+          "oklch(25% 0.020 258)",
+          "oklch(35% 0.020 258)",
+          "oklch(45% 0.020 258)",
+          "oklch(58% 0.020 258)",
+          "oklch(70% 0.020 258)",
+          "oklch(83% 0.020 258)",
+          "oklch(95% 0.020 258)"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Gris Pizarra",
+        "tonalRamp": [
+          "oklch(15% 0.040 262)",
+          "oklch(25% 0.040 262)",
+          "oklch(35% 0.040 262)",
+          "oklch(45% 0.040 262)",
+          "oklch(58% 0.040 262)",
+          "oklch(70% 0.040 262)",
+          "oklch(83% 0.040 262)",
+          "oklch(95% 0.040 262)"
+        ]
+      },
+      "fm-wall": {
+        "role": "primary",
+        "displayName": "Azul Muro",
+        "canonical": "oklch(37.6% 0.128 266.6)",
+        "tonalRamp": [
+          "oklch(15% 0.128 266.6)",
+          "oklch(25% 0.128 266.6)",
+          "oklch(35% 0.128 266.6)",
+          "oklch(45% 0.128 266.6)",
+          "oklch(58% 0.128 266.6)",
+          "oklch(70% 0.128 266.6)",
+          "oklch(83% 0.128 266.6)",
+          "oklch(95% 0.128 266.6)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-night": {
+        "role": "neutral",
+        "displayName": "Noche",
+        "canonical": "oklch(26.9% 0.085 267.4)",
+        "tonalRamp": [
+          "oklch(15% 0.085 267.4)",
+          "oklch(25% 0.085 267.4)",
+          "oklch(35% 0.085 267.4)",
+          "oklch(45% 0.085 267.4)",
+          "oklch(58% 0.085 267.4)",
+          "oklch(70% 0.085 267.4)",
+          "oklch(83% 0.085 267.4)",
+          "oklch(95% 0.085 267.4)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-paper": {
+        "role": "neutral",
+        "displayName": "Papel Crema",
+        "canonical": "oklch(91.4% 0.024 88.2)",
+        "tonalRamp": [
+          "oklch(15% 0.024 88.2)",
+          "oklch(25% 0.024 88.2)",
+          "oklch(35% 0.024 88.2)",
+          "oklch(45% 0.024 88.2)",
+          "oklch(58% 0.024 88.2)",
+          "oklch(70% 0.024 88.2)",
+          "oklch(83% 0.024 88.2)",
+          "oklch(95% 0.024 88.2)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-orange": {
+        "role": "secondary",
+        "displayName": "Naranja Cartel",
+        "canonical": "oklch(63.2% 0.168 42.2)",
+        "tonalRamp": [
+          "oklch(15% 0.168 42.2)",
+          "oklch(25% 0.168 42.2)",
+          "oklch(35% 0.168 42.2)",
+          "oklch(45% 0.168 42.2)",
+          "oklch(58% 0.168 42.2)",
+          "oklch(70% 0.168 42.2)",
+          "oklch(83% 0.168 42.2)",
+          "oklch(95% 0.168 42.2)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-orange-ink": {
+        "role": "secondary",
+        "displayName": "Naranja Boleto",
+        "canonical": "oklch(54.8% 0.156 39.8)",
+        "tonalRamp": [
+          "oklch(15% 0.156 39.8)",
+          "oklch(25% 0.156 39.8)",
+          "oklch(35% 0.156 39.8)",
+          "oklch(45% 0.156 39.8)",
+          "oklch(58% 0.156 39.8)",
+          "oklch(70% 0.156 39.8)",
+          "oklch(83% 0.156 39.8)",
+          "oklch(95% 0.156 39.8)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-orange-deep": {
+        "role": "secondary",
+        "displayName": "Naranja Quemado",
+        "canonical": "oklch(50.0% 0.142 39.9)",
+        "tonalRamp": [
+          "oklch(15% 0.142 39.9)",
+          "oklch(25% 0.142 39.9)",
+          "oklch(35% 0.142 39.9)",
+          "oklch(45% 0.142 39.9)",
+          "oklch(58% 0.142 39.9)",
+          "oklch(70% 0.142 39.9)",
+          "oklch(83% 0.142 39.9)",
+          "oklch(95% 0.142 39.9)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-peach": {
+        "role": "tertiary",
+        "displayName": "Durazno",
+        "canonical": "oklch(80.8% 0.102 58.4)",
+        "tonalRamp": [
+          "oklch(15% 0.102 58.4)",
+          "oklch(25% 0.102 58.4)",
+          "oklch(35% 0.102 58.4)",
+          "oklch(45% 0.102 58.4)",
+          "oklch(58% 0.102 58.4)",
+          "oklch(70% 0.102 58.4)",
+          "oklch(83% 0.102 58.4)",
+          "oklch(95% 0.102 58.4)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-green": {
+        "role": "tertiary",
+        "displayName": "Verde Franja",
+        "canonical": "oklch(68.4% 0.109 121.4)",
+        "tonalRamp": [
+          "oklch(15% 0.109 121.4)",
+          "oklch(25% 0.109 121.4)",
+          "oklch(35% 0.109 121.4)",
+          "oklch(45% 0.109 121.4)",
+          "oklch(58% 0.109 121.4)",
+          "oklch(70% 0.109 121.4)",
+          "oklch(83% 0.109 121.4)",
+          "oklch(95% 0.109 121.4)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-sky": {
+        "role": "tertiary",
+        "displayName": "Azul Cielo",
+        "canonical": "oklch(56.1% 0.085 240.5)",
+        "tonalRamp": [
+          "oklch(15% 0.085 240.5)",
+          "oklch(25% 0.085 240.5)",
+          "oklch(35% 0.085 240.5)",
+          "oklch(45% 0.085 240.5)",
+          "oklch(58% 0.085 240.5)",
+          "oklch(70% 0.085 240.5)",
+          "oklch(83% 0.085 240.5)",
+          "oklch(95% 0.085 240.5)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-muted-on-paper": {
+        "role": "neutral",
+        "displayName": "Tinta Suave sobre Papel",
+        "canonical": "oklch(42.7% 0.094 263.8)",
+        "tonalRamp": [
+          "oklch(15% 0.094 263.8)",
+          "oklch(25% 0.094 263.8)",
+          "oklch(35% 0.094 263.8)",
+          "oklch(45% 0.094 263.8)",
+          "oklch(58% 0.094 263.8)",
+          "oklch(70% 0.094 263.8)",
+          "oklch(83% 0.094 263.8)",
+          "oklch(95% 0.094 263.8)"
+        ],
+        "brand": "fishmarket"
+      },
+      "fm-placeholder": {
+        "role": "neutral",
+        "displayName": "Gris Placeholder",
+        "canonical": "oklch(54.3% 0.065 265.2)",
+        "tonalRamp": [
+          "oklch(15% 0.065 265.2)",
+          "oklch(25% 0.065 265.2)",
+          "oklch(35% 0.065 265.2)",
+          "oklch(45% 0.065 265.2)",
+          "oklch(58% 0.065 265.2)",
+          "oklch(70% 0.065 265.2)",
+          "oklch(83% 0.065 265.2)",
+          "oklch(95% 0.065 265.2)"
+        ],
+        "brand": "fishmarket"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "H1 de cada página. Marcellus sustituye a Sorento mientras no lleguen los archivos."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "H2 de sección."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de paso en Reservas; nombres de plato entre 1.45 y 1.6rem."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Contador de personas en cifras tabulares."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Párrafos de 34 a 56ch; el secundario usa --muted-on."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Etiquetas y leyendas de campo."
+      },
+      "hour-stamp": {
+        "displayName": "Hour stamp",
+        "purpose": "Sello de hora de la barra de navegación y horarios."
+      },
+      "fm-poster": {
+        "displayName": "Cartel",
+        "purpose": "Letras apiladas del festival y titulares de cartel; tamaño ajustado al ancho del cartel por fitStacks, rotuladas glifo por glifo.",
+        "brand": "fishmarket"
+      },
+      "fm-forma": {
+        "displayName": "Forma",
+        "purpose": "Nombres de las siete formas, la cinta y el menú móvil.",
+        "brand": "fishmarket"
+      },
+      "fm-numeral": {
+        "displayName": "Numeral",
+        "purpose": "Números de plato 01–30, formas, días, horas y contador; cifras tabulares.",
+        "brand": "fishmarket"
+      },
+      "fm-headline": {
+        "displayName": "Headline",
+        "purpose": "H2 de sección en Figtree (sustituto de Filson Pro), peso 800.",
+        "brand": "fishmarket"
+      },
+      "fm-title": {
+        "displayName": "Title",
+        "purpose": "Nombre de plato en tarjeta.",
+        "brand": "fishmarket"
+      },
+      "fm-label": {
+        "displayName": "Label",
+        "purpose": "Botones, pestañas, pasos y leyendas, en mayúsculas.",
+        "brand": "fishmarket"
+      },
+      "fm-body": {
+        "displayName": "Body",
+        "purpose": "Texto de lectura, 38 a 44ch.",
+        "brand": "fishmarket"
+      },
+      "fm-hand": {
+        "displayName": "Hand",
+        "purpose": "Notas pintadas a mano en Beth Ellen; nunca texto de lectura.",
+        "brand": "fishmarket"
+      }
+    },
+    "shadows": [
+      {
+        "name": "ventanal",
+        "value": "linear-gradient + repeating-linear-gradient de rgb(23 33 58 / 0.9), filter: blur(18px), mix-blend-mode: multiply, opacity: var(--shadow-o), transform: translateX(var(--shadow-x)) rotate(var(--shadow-a))",
+        "purpose": "La sombra del ventanal sobre mantel y platos; opacidad 0 a 0.24, x2.3 bajo 40rem."
+      },
+      {
+        "name": "luz-de-ciudad",
+        "value": "repeating-linear-gradient de #506c9b, filter: blur(28px), mix-blend-mode: screen, opacity: calc(var(--night) * 0.16)",
+        "purpose": "La luz fría de la noche por el mismo ventanal."
+      },
+      {
+        "name": "contacto-plato",
+        "value": "drop-shadow(var(--psx) var(--psy) 22px rgb(10 16 32 / 0.3)) drop-shadow(0 3px 4px rgb(10 16 32 / 0.25))",
+        "purpose": "Asienta el plato recortado; largo y dirección siguen la hora."
+      },
+      {
+        "name": "boton-reservar",
+        "value": "0 10px 22px -12px rgb(10 16 32 / 0.55)",
+        "purpose": "Única elevación de un control."
+      },
+      {
+        "name": "barra-flotante",
+        "value": "0 16px 40px -16px rgb(10 16 32 / 0.6)",
+        "purpose": "Barra de reserva del celular, con backdrop-filter: blur(12px) saturate(1.2)."
+      },
+      {
+        "name": "velo-hoja",
+        "value": "rgb(10 16 32 / 0.55)",
+        "purpose": "Backdrop de la hoja de plato."
+      },
+      {
+        "name": "fm-papel-pegado",
+        "value": "drop-shadow(0 18px 22px rgb(5 10 30 / 0.45)) drop-shadow(0 2px 3px rgb(5 10 30 / 0.3))",
+        "purpose": "Todo cartel; sigue el borde rasgado de la máscara.",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-boleto",
+        "value": "0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3)",
+        "purpose": "Botón de reservar y de paso, número de plato, pestaña y franja elegidas, paso actual.",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-cartelito",
+        "value": "0 20px 34px -24px rgb(0 0 0 / 0.8), 0 2px 4px rgb(0 0 0 / 0.2)",
+        "purpose": "Tarjeta de plato; en hover 0 30px 40px -24px.",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-cinta",
+        "value": "0 14px 28px -18px rgb(0 0 0 / 0.6)",
+        "purpose": "La cinta verde de las formas.",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-barra",
+        "value": "0 18px 40px -18px rgb(0 0 0 / 0.7), inset 0 0 0 1px color-mix(in oklab, #e9e2d1 14%, transparent)",
+        "purpose": "Barra de reserva del celular.",
+        "brand": "fishmarket"
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entradas, hojas, subrayados, indicadores y giro de platos."
+      },
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Presión de botones (scale 0.97)."
+      },
+      {
+        "name": "reveal",
+        "value": "0.9s ease-out-expo; translateY(18px) + blur(6px) a reposo",
+        "purpose": "Aparición del texto."
+      },
+      {
+        "name": "cloth-shift",
+        "value": "background-color 0.6s linear, color 0.6s linear",
+        "purpose": "Cambio de mantel y tinta con la hora."
+      },
+      {
+        "name": "sheet",
+        "value": "0.55s ease-out-expo desde translateY(100%); desde 48rem translateY(24px) scale(0.98)",
+        "purpose": "Hoja de plato."
+      },
+      {
+        "name": "step-in",
+        "value": "0.6s ease-out-expo desde translateX(24px)",
+        "purpose": "Entrada de cada paso de reserva."
+      },
+      {
+        "name": "fm-paste",
+        "value": "opacity 0.35s ease-out; transform/rotate 0.55s cubic-bezier(0.2, 1.4, 0.4, 1); desde scale(1.07) translateY(-10px) y --tilt - 3deg; retardo var(--d)",
+        "purpose": "Pegado del cartel al entrar (IntersectionObserver en fm.js).",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-stamp",
+        "value": "0.35s cubic-bezier(0.2, 1.5, 0.4, 1), desde scale(1.8) rotate(-20deg)",
+        "purpose": "Sello de lo elegido.",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-seal",
+        "value": "0.5s cubic-bezier(0.2, 1.5, 0.4, 1), desde scale(2.2)",
+        "purpose": "Sello «Confirmada» de la reserva.",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-flash",
+        "value": "0.55s ease-out, destello radial blanco 0.95 → 0",
+        "purpose": "Flash al pasar o enfocar una foto de plato.",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-refill",
+        "value": "animation-timeline: view(), entry 10% a cover 60%",
+        "purpose": "El degradé de las letras sube con el scroll; solo sin movimiento reducido.",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-marquee",
+        "value": "38s linear infinite, pausa en hover",
+        "purpose": "Cinta de las formas.",
+        "brand": "fishmarket"
+      },
+      {
+        "name": "fm-reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Carteles ya pegados, sin cinta, relleno, flash ni giro del plato; sello sin animación.",
+        "brand": "fishmarket"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "40rem"
+      },
+      {
+        "name": "md",
+        "value": "48rem"
+      },
+      {
+        "name": "lg",
+        "value": "64rem"
+      },
+      {
+        "name": "container",
+        "value": "80rem"
+      }
+    ],
+    "lightRig": {
+      "source": "assets/js/light.js",
+      "hourRange": [
+        12,
+        21.5
+      ],
+      "stops": [
+        {
+          "h": 12,
+          "cloth": "#e8ecf1",
+          "shadowOpacity": 0.2,
+          "night": 0
+        },
+        {
+          "h": 15,
+          "cloth": "#dfe4eb",
+          "shadowOpacity": 0.24,
+          "night": 0
+        },
+        {
+          "h": 17.2,
+          "cloth": "#c2c4ab",
+          "shadowOpacity": 0.22,
+          "night": 0
+        },
+        {
+          "h": 18,
+          "cloth": "#646637",
+          "shadowOpacity": 0.2,
+          "night": 0.25
+        },
+        {
+          "h": 19.6,
+          "cloth": "#2b344a",
+          "shadowOpacity": 0.07,
+          "night": 0.75
+        },
+        {
+          "h": 21.5,
+          "cloth": "#17213a",
+          "shadowOpacity": 0,
+          "night": 1
+        }
+      ],
+      "darkThreshold": "luminancia < 0.2 invierte --ink-on a #eef1f5 y marca html[data-tone=dark]",
+      "properties": [
+        "--cloth",
+        "--ink-on",
+        "--muted-on",
+        "--shadow-a",
+        "--shadow-x",
+        "--shadow-o",
+        "--night",
+        "--psx",
+        "--psy"
+      ]
+    },
+    "brands": {
+      "switch": "<html data-brand>",
+      "documented": [
+        "giratorio",
+        "fishmarket"
+      ],
+      "giratorio": {
+        "status": "construida: Inicio, Festival, Reservas",
+        "northStar": "La luz que gira",
+        "tokens": "frontmatter sin prefijo"
+      },
+      "fishmarket": {
+        "status": "construida: fishmarket/index, festival, reservas, eventos, contacto (generadas por fishmarket/_src/build.py)",
+        "tokens": "frontmatter con prefijo fm-; --fm-* en src/fishmarket.css y --brand-* en src/input.css",
+        "fontStack": {
+          "poster": "Big Shoulders Display, Figtree, Impact",
+          "title": "Filson Pro (Figtree como sustituto activo)",
+          "body": "Noto Sans Canadian Aboriginal",
+          "hand": "Beth Ellen"
+        },
+        "materials": {
+          "torn": [
+            "assets/img/fishmarket/papel/torn-alto.png",
+            "torn-ancho.png",
+            "torn-franja.png"
+          ],
+          "texture": "semitono.png 300px + engrudo.webp, mix-blend-mode: soft-light, opacity 0.9",
+          "wallGrain": "ruido SVG en soft-light al 35%"
+        },
+        "narrative": {
+          "northStar": "Cartel chicha del festival",
+          "overview": "El festival se anuncia como se anuncian los festivales en Lima: carteles de papel pegados unos sobre otros en un muro, letras apiladas en degradé de dos tintas y, entre cartel y cartel, la noche de la mesa compartida tomada con flash directo. El muro es el azul Fish Market en todas las páginas, con grano en `soft-light`; encima se pegan carteles con bordes rasgados, engrudo y medio tono, cada uno inclinado unos grados. Los carteles viejos asoman por debajo, recortados por el borde de la pantalla.\n\nLa densidad es de cartelera: titulares de cartel que llenan el ancho de su papel, franjas verdes de datos, notas a mano y los 30 platos del festival numerados 01 a 30 en el orden de la carta. El naranja es tinta de cartel, no superficie de interfaz: llena el degradé de las letras y, en su versión oscura, la acción de reservar. Nada se marca solo con color: lo elegido lleva sello.",
+          "keyCharacteristics": [
+            "Muro azul a sangre en toda página, con grano gris en `soft-light` al 35%; nunca un fondo crema editorial ni un video oscuro.",
+            "Carteles de papel: máscara rasgada en raster, engrudo y medio tono encima en `soft-light`, giro de -2 a 2deg y sombra de papel blanda.",
+            "Letras de cartel apiladas, cada palabra ajustada al ancho de su cartel, rotuladas letra por letra, con contorno navy y desregistro azul cielo.",
+            "Platos con flash: fotos cenitales con flash directo en marcos de papel, con fecha de cámara; el plato del hero va recortado sobre el cartel.",
+            "Numeración única: platos 01 a 30, formas 01 a 07, pasos 1·2·3, en la letra de cartel con cifras tabulares.",
+            "Lo elegido lleva sello (círculo con visto), no solo color.",
+            "Movimiento de pegado: el cartel cae con un golpe seco y se asienta; la foto dispara un flash al pasar o enfocar."
+          ],
+          "rules": [
+            {
+              "name": "The Two Oranges Rule",
+              "body": "El Naranja Cartel es tinta de letra grande y de marcas; el texto pequeño naranja usa Naranja Boleto como fondo con texto blanco, o Naranja Quemado como texto sobre papel. Sobre el muro, la nota naranja va en Durazno.",
+              "section": "colors"
+            },
+            {
+              "name": "The Wall Is Blue Rule",
+              "body": "El fondo de toda superficie Fish Market es el Azul Muro. El color de una sección llega pegando un cartel encima, nunca pintando el muro.",
+              "section": "colors"
+            },
+            {
+              "name": "The Lettered Poster Rule",
+              "body": "La letra de cartel se rotula: `fm.js` envuelve cada glifo en su caja con un giro de hasta ±2.1deg y un salto de ±0.024em, fijos por posición; lleva contorno de 0.014em en Noche y dos sombras sin desenfoque (cielo a 0.05em, noche a 0.025em) como desregistro de segunda tinta. La segunda línea invierte el degradé (naranja arriba, crema abajo). La línea visible va con `aria-hidden` y el texto real queda en `aria-label` o `sr-only`.",
+              "section": "typography"
+            },
+            {
+              "name": "The Fit to Paper Rule",
+              "body": "Una palabra de cartel llena el ancho de su cartel al 97%; no se fija su tamaño a mano.",
+              "section": "typography"
+            },
+            {
+              "name": "The Soft Paper Rule",
+              "body": "Toda sombra lleva desenfoque. El papel se despega del muro con una sombra blanda; no hay sombras duras desplazadas.",
+              "section": "elevation"
+            }
+          ],
+          "dos": [
+            "**Do** pintar el fondo de toda página Fish Market con el Azul Muro y dar color pegando carteles encima.",
+            "**Do** usar la máscara rasgada, el engrudo y el medio tono raster de `assets/img/fishmarket/papel` para todo cartel.",
+            "**Do** ajustar cada palabra de cartel al ancho de su cartel y rotularla letra por letra.",
+            "**Do** numerar los platos 01 a 30 en el orden de la carta y usar el mismo número en tarjeta, hoja y Festival.",
+            "**Do** marcar lo elegido con sello y forma, además del color.",
+            "**Do** usar Naranja Quemado para el texto naranja sobre papel y Durazno para la nota sobre el muro.",
+            "**Do** dar a cada sombra de papel su desenfoque."
+          ],
+          "donts": [
+            "**Don't** usar el mantel, la luz que gira ni el vino de Giratorio en Fish Market.",
+            "**Don't** poner Naranja Cartel como color de texto pequeño sobre el muro ni sobre papel.",
+            "**Don't** fijar un fondo crema editorial ni un video oscuro a sangre con rejilla de tarjetas.",
+            "**Don't** poner rótulos de sección sobre los titulares; la numeración vive en los platos, las formas y los pasos.",
+            "**Don't** usar sombras duras desplazadas; el papel proyecta sombra blanda.",
+            "**Don't** usar Beth Ellen para texto de lectura ni la letra de cartel para párrafos."
+          ]
+        }
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Botón Reservar",
+      "kind": "button",
+      "refersTo": "button-book",
+      "description": "La acción de reservar; único uso del vino.",
+      "html": "<a class=\"ds-btn-book\" href=\"#\">Reservar mesa <svg class=\"ds-arrow\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn-book { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 3.25rem; padding: 0 1.4rem; border-radius: 999px; font-family: \"Noto Sans Canadian Aboriginal\", \"Noto Sans\", system-ui, sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.01em; text-decoration: none; background: #51122b; color: #f7eef1; box-shadow: 0 10px 22px -12px rgb(10 16 32 / 0.55); transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s; } .ds-btn-book:hover { background: #64183a; } .ds-btn-book .ds-arrow { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-book:hover .ds-arrow { transform: translateX(4px); } .ds-btn-book:active { transform: scale(0.97); } .ds-btn-book:focus-visible { outline: 2px solid #17213a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón Fantasma",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Acción secundaria con contorno interior que sigue la tinta del mantel.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Ver festival</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0 1.4rem; border-radius: 999px; font-family: \"Noto Sans Canadian Aboriginal\", \"Noto Sans\", system-ui, sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.01em; text-decoration: none; color: #17213a; background: transparent; box-shadow: inset 0 0 0 1px color-mix(in oklab, #17213a 35%, transparent); transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s; } .ds-btn-ghost:hover { box-shadow: inset 0 0 0 1px #17213a; } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón de Paso",
+      "kind": "button",
+      "refersTo": "button-step",
+      "description": "Avanzar en un formulario (Continuar, Enviar mi opinión).",
+      "html": "<button class=\"ds-btn-step\" type=\"button\">Continuar</button>",
+      "css": ".ds-btn-step { display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0 1.4rem; border: 0; border-radius: 999px; font-family: \"Noto Sans Canadian Aboriginal\", \"Noto Sans\", system-ui, sans-serif; font-size: 1rem; font-weight: 500; background: #17213a; color: #eef1f5; cursor: pointer; transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-step:active { transform: scale(0.97); } .ds-btn-step:focus-visible { outline: 2px solid #17213a; outline-offset: 3px; } .ds-btn-step[disabled] { opacity: 0.4; pointer-events: none; }"
+    },
+    {
+      "name": "Campo",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo de texto con contorno interior y foco en Azul Fragata.",
+      "html": "<label class=\"ds-field\"><span>Nombre</span><input class=\"ds-input\" placeholder=\"300 000 0000\"></label>",
+      "css": ".ds-field { display: grid; gap: 0.45rem; font-family: \"Noto Sans Canadian Aboriginal\", \"Noto Sans\", system-ui, sans-serif; color: #17213a; } .ds-field > span { font-size: 0.95rem; font-weight: 500; } .ds-input { width: 100%; min-height: 3.25rem; padding: 0.75rem 1rem; border: 0; border-radius: 0.9rem; background: #ffffff; color: #17213a; font: inherit; font-size: 1rem; box-shadow: inset 0 0 0 1px rgb(23 33 58 / 0.22); transition: box-shadow 0.25s; } .ds-input::placeholder { color: #5a6886; } .ds-input:focus { outline: none; box-shadow: inset 0 0 0 2px #223a84; }"
+    },
+    {
+      "name": "Fichas de categoría",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Carril en píldora con indicador de tinta bajo la ficha activa.",
+      "html": "<div class=\"ds-chips\" role=\"tablist\"><button class=\"ds-chip ds-chip-on\" role=\"tab\" aria-selected=\"true\">Ceviches</button><button class=\"ds-chip\" role=\"tab\" aria-selected=\"false\">Tiraditos</button><button class=\"ds-chip\" role=\"tab\" aria-selected=\"false\">Causas</button></div>",
+      "css": ".ds-chips { display: inline-flex; gap: 0.25rem; padding: 0.3rem; border-radius: 999px; background: color-mix(in oklab, #17213a 7%, transparent); font-family: \"Noto Sans Canadian Aboriginal\", \"Noto Sans\", system-ui, sans-serif; } .ds-chip { min-height: 2.6rem; padding: 0 1rem; border: 0; border-radius: 999px; background: transparent; color: #17213a; font: inherit; font-size: 0.95rem; white-space: nowrap; cursor: pointer; transition: color 0.35s, background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1); } .ds-chip:hover { background: color-mix(in oklab, #17213a 6%, transparent); } .ds-chip-on, .ds-chip-on:hover { background: #17213a; color: #eef1f5; } .ds-chip:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }"
+    },
+    {
+      "name": "Franja horaria",
+      "kind": "chip",
+      "refersTo": "slot",
+      "description": "Hora de reserva en cifras tabulares; la elegida se rellena de tinta.",
+      "html": "<div class=\"ds-slots\"><label class=\"ds-slot\"><input type=\"radio\" name=\"h\"><span>12:30</span></label><label class=\"ds-slot\"><input type=\"radio\" name=\"h\" checked><span>13:00</span></label><label class=\"ds-slot\"><input type=\"radio\" name=\"h\"><span>13:30</span></label></div>",
+      "css": ".ds-slots { display: grid; grid-template-columns: repeat(3, 5rem); gap: 0.5rem; font-family: \"Noto Sans Canadian Aboriginal\", \"Noto Sans\", system-ui, sans-serif; color: #17213a; } .ds-slot { position: relative; } .ds-slot input { position: absolute; opacity: 0; } .ds-slot span { display: grid; place-items: center; min-height: 3rem; border-radius: 0.9rem; font-variant-numeric: tabular-nums; box-shadow: inset 0 0 0 1px color-mix(in oklab, #17213a 25%, transparent); cursor: pointer; transition: background-color 0.25s, color 0.25s, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-slot span:active { transform: scale(0.95); } .ds-slot input:checked + span { background: #17213a; color: #e8ecf1; box-shadow: none; } .ds-slot input:focus-visible + span { outline: 2px solid #223a84; outline-offset: 2px; }"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Barra sobre el mantel con logotipo, enlaces con subrayado que se dibuja y sello de hora.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-wordmark\">LA FRAGATA</span><nav class=\"ds-links\"><a href=\"#\" aria-current=\"page\">Festival</a><a href=\"#\">Reservas</a><span class=\"ds-muted\">Eventos</span></nav><span class=\"ds-hour\">12:40</span></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 0.9rem 1.25rem; background: #e8ecf1; color: #17213a; font-family: \"Noto Sans Canadian Aboriginal\", \"Noto Sans\", system-ui, sans-serif; box-shadow: 0 1px 0 color-mix(in oklab, #17213a 12%, transparent); } .ds-wordmark { font-family: Sorento, Marcellus, Georgia, serif; font-size: 1.05rem; letter-spacing: 0.12em; } .ds-links { display: flex; gap: 2rem; font-size: 0.95rem; } .ds-links a { position: relative; padding: 0.4rem 0; color: inherit; text-decoration: none; } .ds-links a::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); } .ds-links a:hover::after, .ds-links a[aria-current=\"page\"]::after { transform: scaleX(1); transform-origin: left; } .ds-links a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 4px; } .ds-muted { color: #33466a; padding: 0.4rem 0; } .ds-hour { font-size: 0.95rem; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }"
+    },
+    {
+      "name": "Barra de reserva",
+      "kind": "custom",
+      "refersTo": "book-bar",
+      "description": "Píldora flotante del celular con la reserva en vino y una acción fantasma clara.",
+      "html": "<div class=\"ds-bar\"><a class=\"ds-bar-book\" href=\"#\">Reservar mesa</a><a class=\"ds-bar-ghost\" href=\"#\">Ver festival</a></div>",
+      "css": ".ds-bar { display: flex; gap: 0.5rem; padding: 0.5rem; max-width: 24rem; border-radius: 999px; background: color-mix(in oklab, #17213a 88%, transparent); backdrop-filter: blur(12px) saturate(1.2); box-shadow: 0 16px 40px -16px rgb(10 16 32 / 0.6); font-family: \"Noto Sans Canadian Aboriginal\", \"Noto Sans\", system-ui, sans-serif; } .ds-bar a { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0 1.4rem; border-radius: 999px; font-size: 1rem; font-weight: 500; text-decoration: none; transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, box-shadow 0.3s; } .ds-bar-book { flex: 1; background: #51122b; color: #f7eef1; } .ds-bar-book:hover { background: #64183a; } .ds-bar-ghost { color: #eef1f5; box-shadow: inset 0 0 0 1px rgb(238 241 245 / 0.3); } .ds-bar-ghost:hover { box-shadow: inset 0 0 0 1px #eef1f5; } .ds-bar a:active { transform: scale(0.97); } .ds-bar a:focus-visible { outline: 2px solid #eef1f5; outline-offset: 3px; }"
+    },
+    {
+      "name": "Plato sobre el mantel",
+      "kind": "card",
+      "refersTo": "",
+      "description": "Tarjeta de plato sin caja: recorte con sombra de contacto, nombre en display y descripción en muted; gira al pasar.",
+      "html": "<a class=\"ds-dish\" href=\"#\"><span class=\"ds-plate\"></span><span class=\"ds-dish-name\">Costa Limeña</span><span class=\"ds-dish-desc\">Pesca blanca en leche de tigre, camote y cancha.</span></a>",
+      "css": ".ds-dish { display: grid; gap: 0.9rem; width: 15rem; padding: 1rem; background: #e8ecf1; color: #17213a; text-decoration: none; font-family: \"Noto Sans Canadian Aboriginal\", \"Noto Sans\", system-ui, sans-serif; } .ds-plate { display: block; width: 88%; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #f4f1ea 0 52%, #223a84 53% 70%, #e9e6df 71%); filter: drop-shadow(6px 16px 22px rgb(10 16 32 / 0.3)) drop-shadow(0 3px 4px rgb(10 16 32 / 0.25)); transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); } .ds-dish:hover .ds-plate { transform: rotate(14deg) scale(1.03); } .ds-dish:focus-visible { outline: 2px solid #17213a; outline-offset: 3px; border-radius: 4px; } .ds-dish-name { font-family: Sorento, Marcellus, Georgia, serif; font-size: 1.6rem; line-height: 1.25; } .ds-dish-desc { color: #33466a; font-size: 0.95rem; line-height: 1.375; }"
+    },
+    {
+      "name": "Fish Market — Botón Reservar",
+      "kind": "button",
+      "refersTo": "fm-button-book",
+      "description": "Boleto naranja de la acción de reservar.",
+      "html": "<div class=\"ds-fm-wall\"><a class=\"ds-fm-btn ds-fm-btn-book\" href=\"#\">Reservar mesa <svg class=\"ds-fm-arrow\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-fm-wall { background: #223a84; padding: 2rem; } .ds-fm-btn { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3.25rem; padding: 0 1.35rem; border-radius: 0.35rem; font-size: 0.95rem; text-decoration: none; font-family: \"Figtree\", system-ui, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; transition: transform 0.18s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.18s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.25s; } .ds-fm-btn-book { background: #b9481b; color: #fff; box-shadow: 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3); } .ds-fm-btn-book:hover { background: #a33f17; transform: translate(-1px, -1px); box-shadow: 0 14px 22px -8px rgb(5 10 30 / 0.65), 0 2px 3px rgb(5 10 30 / 0.3); } .ds-fm-btn:active { transform: translateY(1px) scale(0.98); box-shadow: 0 4px 8px -4px rgb(5 10 30 / 0.6); } .ds-fm-arrow { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-fm-btn:hover .ds-fm-arrow { transform: translateX(4px); } .ds-fm-btn:focus-visible { outline: 2px solid #e9e2d1; outline-offset: 3px; }"
+    },
+    {
+      "name": "Fish Market — Botón Línea",
+      "kind": "button",
+      "refersTo": "fm-button-line",
+      "description": "Acción secundaria sobre el muro.",
+      "html": "<div class=\"ds-fm-wall\"><a class=\"ds-fm-btn-line\" href=\"#\">Ver festival</a></div>",
+      "css": ".ds-fm-wall { background: #223a84; padding: 2rem; } .ds-fm-btn-line { display: inline-flex; align-items: center; min-height: 3.25rem; padding: 0 1.35rem; border-radius: 0.35rem; font-size: 0.95rem; text-decoration: none; font-family: \"Figtree\", system-ui, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #e9e2d1; box-shadow: inset 0 0 0 2px color-mix(in oklab, #e9e2d1 55%, transparent); transition: box-shadow 0.18s, transform 0.18s; } .ds-fm-btn-line:hover { box-shadow: inset 0 0 0 2px #e9e2d1; } .ds-fm-btn-line:active { transform: scale(0.98); } .ds-fm-btn-line:focus-visible { outline: 2px solid #e9e2d1; outline-offset: 3px; }"
+    },
+    {
+      "name": "Fish Market — Pestañas con sello",
+      "kind": "chip",
+      "refersTo": "fm-tab",
+      "description": "Categorías del festival; la elegida se pega girada y lleva sello.",
+      "html": "<div class=\"ds-fm-wall\"><div class=\"ds-fm-tabs\" role=\"tablist\"><button class=\"ds-fm-tab\" role=\"tab\" aria-selected=\"true\">Ceviches<span class=\"ds-c\">8</span></button><button class=\"ds-fm-tab\" role=\"tab\" aria-selected=\"false\">Tiraditos<span class=\"ds-c\">3</span></button></div></div>",
+      "css": ".ds-fm-wall { background: #223a84; padding: 2rem; } .ds-fm-tabs { display: flex; gap: 0.5rem; } .ds-fm-tab { position: relative; min-height: 2.9rem; padding: 0 1rem; border: 0; border-radius: 0.3rem; background: transparent; color: #e9e2d1; font-size: 0.92rem; font-family: \"Figtree\", system-ui, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; box-shadow: inset 0 0 0 2px color-mix(in oklab, #e9e2d1 35%, transparent); cursor: pointer; transition: background-color 0.25s, color 0.25s, rotate 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s; } .ds-fm-tab:hover { box-shadow: inset 0 0 0 2px #e9e2d1; } .ds-fm-tab .ds-c { margin-left: 0.4rem; opacity: 0.7; font-variant-numeric: tabular-nums; } .ds-fm-tab[aria-selected=\"true\"] { background: #e9e2d1; color: #223a84; rotate: -2deg; box-shadow: inset 0 -3px 0 #b9481b, 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3); } .ds-fm-tab[aria-selected=\"true\"]::after { content: \"\"; position: absolute; top: -0.45rem; right: -0.45rem; width: 1.15rem; height: 1.15rem; border-radius: 50%; background: #b9481b url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E\") center / 70% no-repeat; box-shadow: 0 0 0 2px #223a84; } .ds-fm-tab:focus-visible { outline: 2px solid #e9e2d1; outline-offset: 3px; }"
+    },
+    {
+      "name": "Fish Market — Campo sobre papel",
+      "kind": "input",
+      "refersTo": "fm-input",
+      "description": "Campo de formulario dentro de un cartel de papel.",
+      "html": "<div class=\"ds-fm-paper\"><label class=\"ds-fm-label\">Nombre<input class=\"ds-fm-input\" placeholder=\"Tu nombre\"></label></div>",
+      "css": ".ds-fm-paper { background: #e9e2d1; padding: 1.5rem; color: #223a84; } .ds-fm-label { display: grid; gap: 0.4rem; font-family: \"Noto Sans Canadian Aboriginal\", sans-serif; font-weight: 500; } .ds-fm-input { height: 3.25rem; padding: 0.75rem 1rem; border: 0; border-radius: 0.35rem; background: #fff; color: #223a84; font: inherit; box-shadow: inset 0 0 0 2px color-mix(in oklab, #223a84 30%, transparent); outline: none; } .ds-fm-input::placeholder { color: #5d6f96; } .ds-fm-input:focus { box-shadow: inset 0 0 0 2px #223a84, 0 0 0 3px color-mix(in oklab, #da5f27 45%, transparent); }"
+    },
+    {
+      "name": "Fish Market — Navegación",
+      "kind": "nav",
+      "refersTo": "fm-wall",
+      "description": "Barra sobre el muro con punto naranja en la página actual.",
+      "html": "<nav class=\"ds-fm-nav\"><span class=\"ds-fm-logo\">FISH MARKET</span><a href=\"#\" aria-current=\"page\">Inicio</a><a href=\"#\">Festival</a><a href=\"#\">Reservas</a></nav>",
+      "css": ".ds-fm-nav { display: flex; align-items: center; gap: 1.5rem; padding: 1rem 1.5rem; background: #223a84; box-shadow: 0 1px 0 color-mix(in oklab, #e9e2d1 16%, transparent); font-family: \"Noto Sans Canadian Aboriginal\", sans-serif; } .ds-fm-logo { margin-right: auto; color: #e9e2d1; font-family: \"Big Shoulders Display\", \"Figtree\", sans-serif; font-weight: 900; font-size: 1.4rem; } .ds-fm-nav a { position: relative; color: #e9e2d1; font-weight: 600; font-size: 0.95rem; text-decoration: none; } .ds-fm-nav a[aria-current=\"page\"]::before { content: \"\"; position: absolute; left: 50%; top: -0.45rem; width: 0.4rem; height: 0.4rem; margin-left: -0.2rem; border-radius: 50%; background: #da5f27; } .ds-fm-nav a:focus-visible { outline: 2px solid #e9e2d1; outline-offset: 3px; }"
+    },
+    {
+      "name": "Fish Market — Tarjeta de plato",
+      "kind": "card",
+      "refersTo": "fm-dish-card",
+      "description": "Cartelito de papel con número, foto con flash, nombre y precio.",
+      "html": "<a class=\"ds-fm-dish\" href=\"#\"><span class=\"ds-badge\">07</span><span class=\"ds-frame\"><span class=\"ds-stamp-date\">10 '26</span></span><span class=\"ds-body\"><span class=\"ds-hand\">Ceviches</span><span class=\"ds-name\">Costa Limeña</span><span class=\"ds-desc\">Pesca blanca en leche de tigre con camote y cancha.</span></span></a>",
+      "css": ".ds-fm-dish { position: relative; display: grid; width: 16rem; background: #e9e2d1; color: #223a84; text-decoration: none; rotate: -1.6deg; box-shadow: 0 20px 34px -24px rgb(0 0 0 / 0.8), 0 2px 4px rgb(0 0 0 / 0.2); transition: rotate 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s; } .ds-fm-dish:hover, .ds-fm-dish:focus-visible { rotate: 0deg; transform: translateY(-6px); box-shadow: 0 30px 40px -24px rgb(0 0 0 / 0.85), 0 2px 4px rgb(0 0 0 / 0.2); outline: none; } .ds-badge { position: absolute; z-index: 3; top: 0.1rem; left: 0.1rem; display: grid; place-items: center; min-width: 2.9rem; height: 2.9rem; background: #b9481b; color: #fff; font-family: \"Big Shoulders Display\", \"Figtree\", sans-serif; font-weight: 900; font-size: 1.45rem; font-variant-numeric: tabular-nums; box-shadow: 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3); } .ds-frame { position: relative; aspect-ratio: 1; margin: 0.6rem 0.6rem 0; background: #14224f; } .ds-stamp-date { position: absolute; right: 0.6rem; bottom: 0.45rem; font-family: \"Courier New\", monospace; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; color: #ff9a4d; text-shadow: 0 0 6px rgb(255 120 40 / 0.65); } .ds-body { display: grid; gap: 0.25rem; padding: 0.8rem 0.9rem 1rem; } .ds-hand { font-family: \"Beth Ellen\", cursive; color: #a33f17; } .ds-name { font-family: \"Figtree\", sans-serif; font-weight: 800; font-size: 1.2rem; line-height: 1.12; } .ds-desc { font-size: 0.9rem; line-height: 1.35; color: #344d82; }"
+    },
+    {
+      "name": "Fish Market — Franja",
+      "kind": "custom",
+      "refersTo": "fm-band",
+      "description": "Banda verde de datos sobre un cartel.",
+      "html": "<div class=\"ds-fm-wall\"><p class=\"ds-fm-band\"><span>Octubre y noviembre</span><span>·</span><span>Chef Carlos Accinelli</span></p></div>",
+      "css": ".ds-fm-wall { background: #223a84; padding: 2rem; } .ds-fm-band { display: inline-flex; flex-wrap: wrap; gap: 0.35rem 0.8rem; padding: 0.55rem 0.9rem; margin: 0; background: #8fa454; color: #14224f; font-family: \"Figtree\", sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.02em; text-transform: uppercase; rotate: -1deg; }"
+    },
+    {
+      "name": "Fish Market — Letras de cartel",
+      "kind": "custom",
+      "refersTo": "fm-poster",
+      "description": "Palabra apilada con degradé de dos tintas, contorno navy y desregistro cielo, rotulada por glifo.",
+      "html": "<div class=\"ds-fm-poster\"><span class=\"ds-fm-stack\"><span><i style=\"--r:-2.1deg\">C</i><i style=\"--r:1.4deg\">E</i><i style=\"--r:-0.7deg\">V</i><i style=\"--r:2.1deg\">I</i><i style=\"--r:0deg\">C</i><i style=\"--r:-1.4deg\">H</i><i style=\"--r:0.7deg\">E</i><i style=\"--r:-2.1deg\">S</i></span></span></div>",
+      "css": ".ds-fm-poster { background: #14224f; padding: 1.5rem; filter: drop-shadow(0 18px 22px rgb(5 10 30 / 0.45)) drop-shadow(0 2px 3px rgb(5 10 30 / 0.3)); rotate: -1.6deg; } .ds-fm-stack { display: block; font-family: \"Big Shoulders Display\", \"Figtree\", Impact, sans-serif; font-weight: 900; text-transform: uppercase; line-height: 0.84; font-size: 4.5rem; } .ds-fm-stack > span { display: block; white-space: nowrap; filter: drop-shadow(0.05em 0.045em 0 #427ba2) drop-shadow(0.025em 0.03em 0 #14224f); } .ds-fm-stack i { display: inline-block; font-style: normal; rotate: var(--r, 0deg); background: linear-gradient(180deg, #e9e2d1 0 38%, #f2b07d 58%, #da5f27 82%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-stroke: 0.014em #14224f; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La luz que gira",
+    "overview": "El sitio es un servicio de almuerzo a noche en el piso 12 del World Trade Center. El scroll es el tiempo: la hora avanza de 12:40 a 21:30, el mantel cambia de color con ella y la sombra borrosa de un ventanal cruza el mantel y los platos juntos, como el salón gira mientras la mesa se queda. No hay fondo fijo: el fondo es un mantel iluminado por la hora. Los platos reales del festival, recortados por el borde de su vajilla y vistos desde arriba, descansan sobre ese mantel con una sombra de contacto que se alarga y gira con la tarde.\n\nLa densidad es baja y editorial: titulares grandes en una display glífica con remates abiertos, texto corrido corto en una sans humanista, mucho mantel entre bloque y bloque. El color de marca vive en la tinta y en la luz, no en superficies decorativas. El vino es la única nota cálida y se guarda para la acción de reservar.\n\n**Una plantilla, dos marcas.** Cada página declara `<html data-brand=\"giratorio|fishmarket\">` y los tokens `--brand-*` en `src/input.css` resuelven color y tipografía. Este documento registra la expresión Giratorio, la única construida (Inicio, Festival, Reservas). Los tokens de Fish Market existen en el código (tinta y primario #223a84, secundario #427ba2, acento #da5f27, oliva #8fa454, mantel #e9e2d1, display Filson Pro con Nunito Sans de respaldo, detalle Beth Ellen), pero todavía no hay ninguna superficie Fish Market, así que su expresión no está documentada ni validada.",
+    "keyCharacteristics": [
+      "El fondo es `--cloth`, escrito por el rig de luz según la hora; nunca un color fijo por sección.",
+      "Sombra de ventanal: paños anchos y parteluces finos, desenfocados, en `multiply`, con el ángulo de la hora.",
+      "Platos recortados sobre el mantel, con sombra de contacto y rotación de pocos grados ligada al scroll.",
+      "Display glífica en peso 400 para titulares; sans humanista para lectura; horas en cifras tabulares.",
+      "Formas en píldora y contornos interiores de 1px en lugar de bordes.",
+      "Vino reservado para reservar."
+    ],
+    "rules": [
+      {
+        "name": "The Cloth Is the Clock Rule",
+        "body": "El fondo de página y de la barra de navegación es siempre `var(--cloth)` y el texto `var(--ink-on)`. `assets/js/light.js` interpola el mantel entre seis paradas (12:00 lino, 15:00, 17:12, 18:00 oliva, 19:36 hora azul, 21:30 tinta), y cuando la luminancia del mantel cae por debajo de 0.2 invierte la tinta a Papel Claro y marca `html[data-tone=\"dark\"]`. Una superficie nueva declara su hora con `data-hour` en vez de pintar un fondo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Wine Reserve Rule",
+        "body": "El vino es la acción de reservar y nada más. Si un elemento en vino no lleva a reservar, sobra.",
+        "section": "colors"
+      },
+      {
+        "name": "The Single Weight Display Rule",
+        "body": "Los titulares en la display van siempre en peso 400 con `text-wrap: balance` y -0.01em; la jerarquía sale del tamaño, nunca de la negrita.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Hour Rule",
+        "body": "Toda hora, fecha y conteo se compone en cifras tabulares para que el sello no salte mientras la hora avanza.",
+        "section": "typography"
+      },
+      {
+        "name": "The Shadow Follows the Hour Rule",
+        "body": "Ninguna sombra de la escena es estática: ventanal y contacto de plato leen las mismas variables de hora. Una sombra nueva sobre el mantel se ata a `--shadow-a`, `--psx` y `--psy`, o no va.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Real Plate Edge Rule",
+        "body": "Las fotos de plato se recortan por el borde de su vajilla y se apoyan sobre el mantel sin marco, sin rectángulo y sin fondo propio.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do pintar el fondo con `var(--cloth)` y el texto con `var(--ink-on)`, y asignar una hora con `data-hour` a cada sección nueva.",
+      "Do usar el vino solo en el botón de reservar y su hover (#64183a).",
+      "Do mantener las tres capas: platos en z 1, sombra en z 2, texto en z 3 (`.plate`, `.light-rig`, `.layer-text`).",
+      "Do recortar cada plato por el borde real de su vajilla y asentarlo con la sombra de contacto `.plate`.",
+      "Do componer horas, fechas y conteos en cifras tabulares.",
+      "Do dibujar contornos con un inset de 1px en tinta translúcida y usar píldoras (999px) para los controles.",
+      "Do referenciar los colores por `--brand-*` o por los tokens de Tailwind (`ink`, `primary`, `on-dark`) para que Fish Market se resuelva por tokens."
+    ],
+    "donts": [
+      "Don't fijar un color de fondo por sección ni un fondo de video oscuro a sangre; el mantel y la hora hacen ese trabajo.",
+      "Don't usar el vino para errores, selección, decoración ni enlaces secundarios.",
+      "Don't meter los platos en marcos, rectángulos de foto o tarjetas con fondo.",
+      "Don't hacer girar los platos en vueltas completas ni animarlos sin scroll; giran unos grados, la mesa se queda.",
+      "Don't poner negrita en la display; la jerarquía es tamaño.",
+      "Don't usar Pulshkin High ni otro rótulo de detalle hasta tener el archivo y una superficie que lo justifique.",
+      "Don't escribir hexadecimales de Giratorio dentro de componentes nuevos."
+    ]
+  }
+}

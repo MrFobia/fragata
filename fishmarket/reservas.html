@@ -1,0 +1,232 @@
+<!doctype html>
+<!-- Generado por fishmarket/_src/build.py: editar el <main> en _src/reservas.main.html -->
+<html lang="es" data-brand="fishmarket" data-tone="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Reservas · Fish Market</title>
+  <meta name="description" content="Reserva tu mesa en Fish Market, Carrera 9 # 77-1, Bogotá: elige día y hora, número de personas y confirma.">
+  <meta name="theme-color" content="#223a84">
+  <link rel="icon" href="../assets/img/fishmarket/barco-blanco.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Figtree:wght@400;600;700;800;900&family=Noto+Sans+Canadian+Aboriginal:wght@400;500;600&family=Beth+Ellen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/fm-reservas.js"></script>
+</head>
+<body class="overflow-x-clip antialiased">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-[#e9e2d1] focus:px-4 focus:py-2 focus:text-[#223a84]">Saltar al contenido</a>
+
+  <header class="site-nav">
+    <a href="./" class="flex items-center gap-2.5" aria-label="Fish Market by La Fragata, inicio">
+      <img src="../assets/img/fishmarket/barco-blanco.png" alt="" width="581" height="463" class="h-8 w-auto">
+      <img src="../assets/img/fishmarket/wordmark-blanco.png" alt="" width="900" height="209" class="h-7 w-auto">
+    </a>
+    <nav aria-label="Principal" class="col-start-2 hidden items-center gap-7 text-[0.95rem] lg:flex">
+      <a class="nav-link" href="festival.html">Festival</a>
+      <a class="nav-link" href="reservas.html" aria-current="page">Reservas</a>
+      <a class="nav-link" href="eventos.html">Eventos</a>
+      <a class="nav-link" href="contacto.html">Sede</a>
+      <span class="muted cursor-not-allowed" aria-disabled="true" title="Próximamente">Carta</span>
+      <span class="muted cursor-not-allowed" aria-disabled="true" title="Próximamente">Gift Cards</span>
+    </nav>
+    <div class="col-start-3 flex items-center justify-self-end gap-3">
+      <button type="button" class="grid size-11 place-items-center lg:hidden" data-menu-toggle aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div id="menu" class="menu-sheet lg:hidden" data-open="false">
+    <button type="button" class="absolute right-4 top-4 grid size-11 place-items-center" data-menu-toggle aria-label="Cerrar menú">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav aria-label="Menú" class="grid gap-1">
+      <a href="./">Inicio</a>
+      <a href="festival.html">Festival</a>
+      <a href="reservas.html" aria-current="page">Reservas</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="contacto.html">Sede</a>
+    </nav>
+    <p class="mt-8 text-[0.95rem] text-white/85">Carta, Gift Cards y pedidos llegan pronto.</p>
+  </div>
+
+  <main id="contenido" class="relative px-4 pb-24 pt-24 lg:grid lg:min-h-[100svh] lg:grid-cols-12 lg:gap-12 lg:px-10 lg:pt-28">
+    <!-- El boleto: se llena y se sella con cada elección -->
+    <aside class="lg:col-span-5" aria-label="Tu reserva">
+      <div class="lg:sticky lg:top-28">
+        <h1>
+          <span class="hand block text-[clamp(2rem,8vw,3rem)] leading-none text-[#f2b07d]">Reserva</span>
+          <span class="stack mt-1" data-fit data-fit-max="150" aria-hidden="true"><span>tu mesa</span></span>
+          <span class="sr-only">tu mesa</span>
+        </h1>
+        <p class="muted mt-4 max-w-[40ch] text-[1.02rem] leading-relaxed">Nuestras puertas están abiertas siempre para ti, pero nunca sobra ser precavido y reservar una mesa.</p>
+
+        <div class="ticket paste mt-8 hidden px-7 py-6 sm:block" style="--tilt:-1.4deg" data-ticket aria-hidden="true">
+          <div class="flex items-center justify-between border-b-2 border-dashed border-[#223a84]/30 pb-4">
+            <img src="../assets/img/fishmarket/wordmark-azul.png" alt="" width="900" height="209" class="h-6 w-auto">
+            <span class="num text-[1rem] text-[#a33f17]">Festival 2026</span>
+          </div>
+          <dl class="grid grid-cols-2 gap-x-6 gap-y-5 pt-5">
+            <div><dt class="text-[0.78rem] font-bold uppercase tracking-[0.14em] text-[#344d82]">Día</dt><dd class="mt-1 font-[Figtree] text-[1.25rem] font-extrabold leading-tight" data-t-date>—</dd></div>
+            <div><dt class="text-[0.78rem] font-bold uppercase tracking-[0.14em] text-[#344d82]">Hora</dt><dd class="num mt-1 text-[2rem] leading-none" data-t-time>—</dd></div>
+            <div><dt class="text-[0.78rem] font-bold uppercase tracking-[0.14em] text-[#344d82]">Personas</dt><dd class="num mt-1 text-[2rem] leading-none" data-t-people>2</dd></div>
+            <div><dt class="text-[0.78rem] font-bold uppercase tracking-[0.14em] text-[#344d82]">Zona</dt><dd class="mt-1 font-[Figtree] text-[1.25rem] font-extrabold leading-tight" data-t-zone>—</dd></div>
+          </dl>
+          <p class="mt-5 border-t-2 border-dashed border-[#223a84]/30 pt-4 text-[0.92rem] text-[#344d82]">Carrera 9 # 77-1 · Bogotá</p>
+          <span class="seal" data-seal hidden>Confirmada</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="mt-10 lg:col-span-6 lg:col-start-7 lg:mt-0">
+      <ol class="step-rail" aria-hidden="true" data-rail>
+        <li data-current="true"><span class="num">1</span>Cuándo</li>
+        <li><span class="num">2</span>Quiénes</li>
+        <li><span class="num">3</span>Datos</li>
+      </ol>
+
+      <form class="mt-8" novalidate data-booking>
+        <!-- 1 · Fecha y hora -->
+        <section class="step grid gap-7" data-step="1" aria-labelledby="s1">
+          <h2 id="s1" class="text-[1.9rem] leading-tight" tabindex="-1">¿Cuándo vienes?</h2>
+          <fieldset>
+            <legend class="mb-3 text-[0.95rem] font-semibold">Fecha</legend>
+            <div class="days" data-days></div>
+          </fieldset>
+          <fieldset>
+            <legend class="mb-3 text-[0.95rem] font-semibold">Hora <span class="muted font-normal">· de la tarde, todos los días de 12 m a 6 p. m.</span></legend>
+            <div class="slots" data-slots></div>
+            <p class="muted mt-3 text-[0.9rem]" data-slots-empty hidden>Ya no quedan horas para hoy. Elige otro día.</p>
+          </fieldset>
+          <button type="button" class="fm-btn fm-btn-step" data-next disabled>Continuar</button>
+        </section>
+
+        <!-- 2 · Personas y zona -->
+        <section class="step grid gap-8" data-step="2" aria-labelledby="s2" hidden>
+          <h2 id="s2" class="text-[1.9rem] leading-tight" tabindex="-1">¿Cuántas personas?</h2>
+          <fieldset>
+            <legend class="mb-3 text-[0.95rem] font-semibold">Personas</legend>
+            <div class="grid grid-cols-6 gap-2" data-people>
+              <label class="slot"><input type="radio" name="personas" value="1"><span>1</span></label>
+              <label class="slot"><input type="radio" name="personas" value="2" checked><span>2</span></label>
+              <label class="slot"><input type="radio" name="personas" value="3"><span>3</span></label>
+              <label class="slot"><input type="radio" name="personas" value="4"><span>4</span></label>
+              <label class="slot"><input type="radio" name="personas" value="5"><span>5</span></label>
+              <label class="slot"><input type="radio" name="personas" value="6"><span>6+</span></label>
+            </div>
+          </fieldset>
+          <div class="stepper" data-big hidden>
+            <button type="button" data-minus aria-label="Una persona menos">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg>
+            </button>
+            <p class="text-center"><output class="count" data-count aria-live="polite">6</output><span class="muted block text-[0.95rem]">personas</span></p>
+            <button type="button" data-plus aria-label="Una persona más">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </div>
+          <p class="text-[0.95rem] leading-relaxed" data-group-note hidden>Para más de 12 personas, cotiza tu evento en <a class="underline" href="eventos.html#cotizar">Casa Fish Market 77</a>.</p>
+          <fieldset>
+            <legend class="mb-3 text-[0.95rem] font-semibold">Zona</legend>
+            <div class="grid grid-cols-3 gap-2" data-zone>
+              <label class="slot"><input type="radio" name="zona" value="Terraza" checked><span>Terraza</span></label>
+              <label class="slot"><input type="radio" name="zona" value="Salón"><span>Salón</span></label>
+              <label class="slot"><input type="radio" name="zona" value="Sin preferencia"><span class="px-2 text-center leading-tight">Sin preferencia</span></label>
+            </div>
+          </fieldset>
+          <div class="flex gap-4">
+            <button type="button" class="fm-btn fm-btn-line" data-back>Atrás</button>
+            <button type="button" class="fm-btn fm-btn-step flex-1" data-next>Continuar</button>
+          </div>
+        </section>
+
+        <!-- 3 · Datos -->
+        <section class="step grid gap-7" data-step="3" aria-labelledby="s3" hidden>
+          <h2 id="s3" class="text-[1.9rem] leading-tight" tabindex="-1">Tus datos</h2>
+          <p class="ticket px-6 py-4 text-[1.02rem] font-semibold sm:hidden" data-sum-line></p>
+          <div class="grid gap-5">
+            <div class="field">
+              <label for="r-nombre">Nombre</label>
+              <input id="r-nombre" name="nombre" class="input" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="r-tel">Teléfono</label>
+              <input id="r-tel" name="telefono" class="input" type="tel" inputmode="tel" autocomplete="tel" placeholder="310 555 0142" required>
+            </div>
+            <fieldset>
+              <legend class="mb-3 text-[0.95rem] font-semibold">Ocasión <span class="muted font-normal">(opcional)</span></legend>
+              <div class="grid grid-cols-3 gap-2" data-occasion>
+                <label class="slot"><input type="radio" name="ocasion" value="Cumpleaños"><span>Cumpleaños</span></label>
+                <label class="slot"><input type="radio" name="ocasion" value="Con amigos"><span>Con amigos</span></label>
+                <label class="slot"><input type="radio" name="ocasion" value="Negocios"><span>Negocios</span></label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="flex gap-4">
+            <button type="button" class="fm-btn fm-btn-line" data-back>Atrás</button>
+            <button type="submit" class="fm-btn fm-btn-book flex-1">Confirmar reserva</button>
+          </div>
+        </section>
+
+        <!-- 4 · Confirmación por WhatsApp -->
+        <section class="step grid gap-6" data-step="4" aria-labelledby="s4" hidden>
+          <h2 id="s4" tabindex="-1">
+            <span class="hand block text-[2.4rem] leading-none text-[#f2b07d]">¡Listo!</span>
+            <span class="mt-2 block text-[clamp(2rem,7vw,3rem)] leading-tight">Te esperamos, <span data-ok-name></span></span>
+          </h2>
+          <p class="text-[1.1rem] leading-relaxed" data-ok-line></p>
+          <figure class="wa-chat" aria-label="Así te llega la confirmación por WhatsApp">
+            <figcaption class="wa-head">
+              <img src="../assets/img/fishmarket/barco-azul.png" alt="" width="581" height="463" class="h-5 w-auto">
+              <span><strong class="block text-[0.95rem] font-medium">Fish Market</strong><span class="text-[0.8rem] opacity-80">Cuenta de empresa</span></span>
+            </figcaption>
+            <div class="wa-body">
+              <p class="wa-msg" data-wa-confirm></p>
+              <p class="wa-day">El día de tu reserva</p>
+              <div class="wa-msg">
+                <p data-wa-remind></p>
+                <div class="wa-replies">
+                  <button type="button" data-wa-reply="si">Sí, ahí estaré</button>
+                  <button type="button" data-wa-reply="cambiar">Cambiar</button>
+                </div>
+              </div>
+              <p class="wa-msg wa-out" data-wa-answer hidden>Sí, ahí estaré</p>
+            </div>
+          </figure>
+          <div class="flex flex-wrap gap-4">
+            <a class="fm-btn fm-btn-line" data-ics download="reserva-fish-market.ics">Agregar al calendario</a>
+            <a class="fm-btn fm-btn-line" href="festival.html">Ver el festival</a>
+          </div>
+          <p class="muted text-[0.85rem]">Prototipo: esta reserva todavía no se envía al restaurante y el mensaje de WhatsApp es una simulación.</p>
+        </section>
+      </form>
+      <p class="muted mt-10 text-[0.9rem]" data-wa>¿Prefieres escribirnos? <a class="underline" href="https://wa.me/573102145472" target="_blank" rel="noopener">Reserva por WhatsApp</a></p>
+    </div>
+  </main>
+
+  <footer class="border-t-2 border-[#e9e2d1]/15 px-4 pb-32 pt-12 lg:px-10 lg:pb-12">
+    <div class="mx-auto grid max-w-7xl gap-10 text-[0.98rem] sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <img src="../assets/img/fishmarket/logo-blanco.png" alt="Fish Market by La Fragata" width="653" height="551" class="h-20 w-auto">
+        <p class="hand mt-4 text-[1.2rem] text-[#f2b07d]">Muchas formas de probar el mar</p>
+      </div>
+      <div>
+        <p class="muted font-semibold">Sede</p>
+        <p class="mt-2">Carrera 9 # 77-1, Bogotá<br>Todos los días, 12 m a 6 p. m.</p>
+      </div>
+      <nav aria-label="Pie de página" class="grid content-start gap-2">
+        <a class="underline-offset-4 hover:underline" href="festival.html">Festival</a>
+        <a class="underline-offset-4 hover:underline" href="reservas.html">Reservas</a>
+        <a class="underline-offset-4 hover:underline" href="eventos.html">Eventos</a>
+        <a class="underline-offset-4 hover:underline" href="contacto.html">Sede y contacto</a>
+      </nav>
+      <div class="grid content-start gap-2">
+        <a class="underline-offset-4 hover:underline" href="../giratorio/">Parte de Grupo Fragata</a>
+        <a class="muted text-[0.9rem] underline-offset-4 hover:underline" href="https://wa.me/573102145472">Reservas por WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

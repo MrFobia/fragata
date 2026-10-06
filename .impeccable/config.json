@@ -1,0 +1,170 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "giratorio/index.html"
+        ],
+        "createdAt": "2026-10-05T17:57:42.757Z",
+        "reason": "agent: only multi-line display quote in Marcellus at 4rem, 1.16 is intended display leading; body copy uses leading-relaxed"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "giratorio/index.html"
+        ],
+        "createdAt": "2026-10-05T17:57:42.774Z",
+        "reason": "agent: footer wrapper has border-top with pt-8 (32px) inset; detector misreads it"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "giratorio/festival.html"
+        ],
+        "createdAt": "2026-10-05T17:57:42.788Z",
+        "reason": "agent: footer has pt-8, success box has p-8 while hidden, dialog media is full-bleed by design with p-6 text block"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "giratorio/reservas.html"
+        ],
+        "createdAt": "2026-10-05T20:48:47.628Z",
+        "reason": "agent: the only nesting is the WhatsApp preview, which depicts chat bubbles inside a chat window on purpose"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "giratorio/reservas.html"
+        ],
+        "createdAt": "2026-10-05T20:48:47.645Z",
+        "reason": "agent: wa-replies buttons are 2.75rem tall with centered labels under a divider, the WhatsApp quick-reply pattern"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "giratorio/eventos.html"
+        ],
+        "createdAt": "2026-10-05T20:48:47.660Z",
+        "reason": "agent: footer has pt-8 under its border and the success box has p-8 (hidden until submit)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "giratorio/contacto.html"
+        ],
+        "createdAt": "2026-10-05T20:48:47.675Z",
+        "reason": "agent: footer wrapper has pt-8 (32px) under its border-top"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/fishmarket.css"
+        ],
+        "createdAt": "2026-10-06T02:02:55.794Z",
+        "reason": "agent: two-ink fade lettering is the core of the user-chosen 'Cartel chicha del festival' direction (decision page 05-oct-2026)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "courier new",
+        "files": [
+          "src/fishmarket.css"
+        ],
+        "createdAt": "2026-10-06T02:02:55.813Z",
+        "reason": "agent: date imprint of a disposable flash camera on dish photos, a 0.85rem detail of the chosen world; DESIGN.md documents only Giratorio"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "filson pro",
+        "files": [
+          "fishmarket/**"
+        ],
+        "createdAt": "2026-10-06T02:12:04.291Z",
+        "reason": "agent: Fish Market brand fonts from the client brief (Filson Pro, Beth Ellen) plus stand-ins and the chosen poster face; DESIGN.md documents only Giratorio until the FM finish documenter runs"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "big shoulders display",
+        "files": [
+          "fishmarket/**"
+        ],
+        "createdAt": "2026-10-06T02:12:04.309Z",
+        "reason": "agent: Fish Market brand fonts from the client brief (Filson Pro, Beth Ellen) plus stand-ins and the chosen poster face; DESIGN.md documents only Giratorio until the FM finish documenter runs"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "figtree",
+        "files": [
+          "fishmarket/**"
+        ],
+        "createdAt": "2026-10-06T02:12:04.325Z",
+        "reason": "agent: Fish Market brand fonts from the client brief (Filson Pro, Beth Ellen) plus stand-ins and the chosen poster face; DESIGN.md documents only Giratorio until the FM finish documenter runs"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "beth ellen",
+        "files": [
+          "fishmarket/**"
+        ],
+        "createdAt": "2026-10-06T02:12:04.346Z",
+        "reason": "agent: Fish Market brand fonts from the client brief (Filson Pro, Beth Ellen) plus stand-ins and the chosen poster face; DESIGN.md documents only Giratorio until the FM finish documenter runs"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(0.2, 1.4, 0.4, 1)",
+        "files": [
+          "src/fishmarket.css"
+        ],
+        "createdAt": "2026-10-06T02:40:59.536Z",
+        "reason": "agent: paste-up slap and rubber-stamp overshoot are the signature interaction named in the Fish Market direction contract (user-chosen 'Cartel chicha del festival')"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(0.2, 1.4, 0.4, 1)",
+        "files": [
+          "assets/js/fm-reservas.js"
+        ],
+        "createdAt": "2026-10-06T02:40:59.556Z",
+        "reason": "agent: paste-up slap and rubber-stamp overshoot are the signature interaction named in the Fish Market direction contract (user-chosen 'Cartel chicha del festival')"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(0.2, 1.5, 0.4, 1)",
+        "files": [
+          "src/fishmarket.css"
+        ],
+        "createdAt": "2026-10-06T02:40:59.576Z",
+        "reason": "agent: paste-up slap and rubber-stamp overshoot are the signature interaction named in the Fish Market direction contract (user-chosen 'Cartel chicha del festival')"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(0.2, 1.5, 0.4, 1)",
+        "files": [
+          "assets/js/fm-reservas.js"
+        ],
+        "createdAt": "2026-10-06T02:40:59.596Z",
+        "reason": "agent: paste-up slap and rubber-stamp overshoot are the signature interaction named in the Fish Market direction contract (user-chosen 'Cartel chicha del festival')"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "fishmarket/index.html"
+        ],
+        "createdAt": "2026-10-06T02:48:03.906Z",
+        "reason": "agent: the two flagged lines are short pasted-paper strips (6-8 words) used as poster labels, part of the chicha poster vocabulary; no running text is uppercase"
+      }
+    ]
+  }
+}

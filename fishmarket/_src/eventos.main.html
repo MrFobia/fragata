@@ -1,0 +1,171 @@
+  <main id="contenido">
+    <!-- 01 · Cartel de eventos -->
+    <section class="relative overflow-x-clip px-4 pb-20 pt-24 lg:grid lg:grid-cols-12 lg:items-center lg:gap-10 lg:px-10 lg:pb-24 lg:pt-28" aria-labelledby="ev-titulo">
+      <div class="poster poster-sky poster-wide pointer-events-none absolute right-[-10%] top-[4.5rem] h-[40%] w-[60%]" style="--tilt:4deg" aria-hidden="true"></div>
+      <div class="poster poster-orange paste relative z-[2] px-5 pb-10 pt-6 lg:col-span-6 lg:px-9 lg:pb-12" style="--tilt:-1.4deg">
+        <div class="relative z-[3]">
+          <p class="flex items-center justify-between gap-4 whitespace-nowrap font-[Figtree] text-[0.74rem] font-extrabold uppercase tracking-[0.18em] text-white/85">
+            <span>Casa Fish Market 77</span><span class="num text-[1rem] tracking-[0.06em] text-[#14224f]">65 a 100 invitados</span>
+          </p>
+          <h1 id="ev-titulo" class="mt-4">
+            <span class="hand block text-[clamp(1.9rem,8.5vw,3rem)] leading-none text-white">Creamos</span>
+            <span class="stack stack-ink mt-1" data-fit data-fit-max="120" aria-hidden="true"><span class="!text-white">experiencias</span><span class="!text-[#14224f]">memorables</span></span>
+            <span class="sr-only">experiencias memorables</span>
+          </h1>
+          <p class="mt-6 max-w-[40ch] text-[1.08rem] leading-relaxed">Celebraciones sociales y encuentros de empresa en una casa privada de la Carrera 9, con la cocina de Fish Market al centro de la mesa.</p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#cotizar" class="fm-btn fm-btn-step">Cotizar mi evento
+              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <figure class="fm-photo paste relative z-[1] -mt-6 ml-6 aspect-[4/3] lg:col-span-6 lg:-ml-16 lg:mt-0" style="--tilt:2deg; --d:120ms">
+        <img src="../assets/img/fishmarket/casa/terraza-dia.webp" alt="Terraza de Casa Fish Market 77 de día bajo el toldo azul, con mesas de madera, plantas y un ramo de flores rojas" width="1600" height="1064" fetchpriority="high">
+        <figcaption class="fm-cap">La terraza</figcaption>
+      </figure>
+    </section>
+
+    <!-- 02 · Momentos -->
+    <section class="px-4 py-20 lg:px-10 lg:py-28" aria-labelledby="momentos-titulo">
+      <div class="mx-auto max-w-7xl">
+        <div class="mt-6 grid gap-8 lg:grid-cols-12">
+          <h2 id="momentos-titulo" class="reveal text-[clamp(2.25rem,7vw,4.2rem)] leading-[0.98] lg:col-span-6">Los mejores momentos pasan alrededor de una mesa.</h2>
+          <div class="reveal muted grid gap-4 text-[1.06rem] leading-relaxed lg:col-span-5 lg:col-start-8" data-intro></div>
+        </div>
+        <div class="mt-14 grid gap-8 lg:grid-cols-2" data-momentos></div>
+      </div>
+    </section>
+
+    <!-- 03 · El espacio -->
+    <section id="casa77" class="py-20 lg:py-28" aria-labelledby="espacio-titulo">
+      <div class="mx-auto max-w-7xl px-4 lg:px-10">
+        <div class="mt-6 grid gap-8 lg:grid-cols-12 lg:items-end">
+          <h2 id="espacio-titulo" class="lg:col-span-7">
+            <span class="stack" data-fit data-fit-max="140"><span>Casa Fish</span><span>Market 77</span></span>
+          </h2>
+          <p class="reveal muted max-w-[46ch] text-[1.06rem] leading-relaxed lg:col-span-5" data-space-desc></p>
+        </div>
+      </div>
+      <ul class="drag-row mt-4 [grid-auto-columns:min(84vw,34rem)]" role="list" data-space-photos></ul>
+      <div class="mx-auto mt-4 grid max-w-7xl gap-10 px-4 lg:grid-cols-12 lg:px-10">
+        <dl class="grid content-start gap-5 lg:col-span-5" data-space-facts></dl>
+        <div class="lg:col-span-7">
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Distribuciones" data-plan-tabs></div>
+          <figure class="poster poster-paper mt-5 p-4" style="--tilt:-0.6deg">
+            <img src="../assets/img/fishmarket/casa/plano-mesa-larga.webp" class="relative z-[1] mx-auto max-h-[26rem] w-auto" alt="Plano de montaje en mesa larga de Casa Fish Market 77" width="1200" height="1075" loading="lazy" data-plan-img>
+            <figcaption class="relative z-[3] mt-3 flex items-baseline justify-between gap-4 border-t-2 border-[#223a84]/20 pt-3 font-[Figtree] font-extrabold" data-plan-cap></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Menús -->
+    <section class="px-4 py-20 lg:px-10 lg:py-28" aria-labelledby="menus-titulo">
+      <div class="mx-auto max-w-7xl">
+        <h2 id="menus-titulo" class="reveal mt-6 max-w-[16ch] text-[clamp(2.25rem,7vw,4.2rem)] leading-[0.98]">Menús para cada tipo de encuentro.</h2>
+        <ol class="mt-12 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4" role="list" data-menus></ol>
+      </div>
+    </section>
+
+    <!-- 05 · Experiencias y calendario -->
+    <section class="px-4 py-20 lg:px-10 lg:py-28" aria-labelledby="exp-titulo">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-7">
+          <h2 id="exp-titulo" class="reveal text-[clamp(2rem,5vw,3rem)] leading-none">Experiencias</h2>
+          <div class="mt-8 grid gap-6" data-experiencias></div>
+        </div>
+        <div class="lg:col-span-4 lg:col-start-9">
+          <h2 class="reveal text-[clamp(2rem,5vw,3rem)] leading-none">Calendario</h2>
+          <ul class="mt-8 grid gap-5" role="list" data-calendario></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · Cotizar -->
+    <section id="cotizar" class="px-4 pb-36 pt-16 lg:px-10 lg:pb-28 lg:pt-24" aria-labelledby="cotizar-titulo">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <h2 id="cotizar-titulo" class="reveal mt-5 text-[clamp(2.25rem,7vw,3.8rem)] leading-[1]">¿Hacemos realidad tu evento juntos?</h2>
+          <p class="reveal muted mt-5 text-[1.06rem] leading-relaxed">Solo necesitamos estos datos. Los enviamos a nuestro equipo de eventos por WhatsApp y nos pondremos en contacto contigo.</p>
+          <p class="muted mt-6 text-[0.95rem]">Eventos: <a class="underline" href="https://wa.me/573145974455" target="_blank" rel="noopener">+57 314 597 4455</a></p>
+        </div>
+        <div class="lg:col-span-7 lg:col-start-6">
+          <form class="poster poster-paper on-paper paste grid gap-8 p-5 sm:p-8" style="--tilt:0.5deg" novalidate data-cotizar>
+            <div class="relative z-[3] field">
+              <label for="c-nombre">Nombre completo</label>
+              <input id="c-nombre" name="nombre" class="input" autocomplete="name" placeholder="Nombre y apellido" required>
+            </div>
+            <div class="relative z-[3] field">
+              <label for="c-evento">Nombre del evento</label>
+              <input id="c-evento" name="evento" class="input" placeholder="Ej. Cumpleaños de Laura" required>
+            </div>
+            <div class="relative z-[3] grid gap-5 sm:grid-cols-2">
+              <div class="field">
+                <label for="c-personas">Número de personas</label>
+                <input id="c-personas" name="personas" class="input" type="number" inputmode="numeric" min="1" placeholder="Ej. 60" required>
+              </div>
+              <div class="field">
+                <label for="c-fecha">Fecha y hora del evento</label>
+                <input id="c-fecha" name="fecha" class="input" type="datetime-local" required>
+              </div>
+            </div>
+            <fieldset class="relative z-[3]">
+              <legend class="mb-3 text-[0.95rem] font-semibold">Lugar</legend>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="slot"><input type="radio" name="lugar" value="casa" checked><span class="grid gap-0.5 py-2 text-center leading-tight">Casa Fish Market 77<small class="text-[0.8rem] opacity-75">Carrera 9 # 77-19</small></span></label>
+                <label class="slot"><input type="radio" name="lugar" value="tuyos"><span class="grid gap-0.5 py-2 text-center leading-tight">Tus espacios<small class="text-[0.8rem] opacity-75">Vamos a donde nos digas</small></span></label>
+              </div>
+            </fieldset>
+            <div class="relative z-[3] field">
+              <label for="c-tipo">Tipo de evento</label>
+              <select id="c-tipo" name="tipo" class="input" required><option value="">Selecciona una opción</option></select>
+            </div>
+            <p class="relative z-[3] -mb-3 border-t-2 border-[#223a84]/15 pt-6 text-[0.95rem] font-semibold">Opcional <span class="font-normal text-[#344d82]">· Cuéntanos un poco más y armaremos una propuesta a tu medida.</span></p>
+            <div class="relative z-[3] grid gap-5 sm:grid-cols-2">
+              <div class="field">
+                <label for="c-menu">Tipo de menú</label>
+                <select id="c-menu" name="menu" class="input"><option value="">Selecciona una opción</option></select>
+              </div>
+              <div class="field">
+                <label for="c-exp">¿Te gustaría sumar una experiencia?</label>
+                <select id="c-exp" name="experiencia" class="input"><option value="">Selecciona una opción</option></select>
+              </div>
+            </div>
+            <div class="relative z-[3] field" data-exp-otra hidden>
+              <label for="c-exp-otra">¿Qué experiencia te gustaría?</label>
+              <input id="c-exp-otra" name="expOtra" class="input" placeholder="Cuéntanos qué tienes en mente">
+            </div>
+            <fieldset class="relative z-[3] grid gap-3">
+              <legend class="text-[0.95rem] font-semibold">Presupuesto aproximado</legend>
+              <p class="text-[0.875rem] text-[#344d82]">Es solo una referencia para proponerte algo que se ajuste a ti, en pesos colombianos.</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="field"><label for="c-pmin" class="text-[0.875rem]">Desde</label><input id="c-pmin" name="pmin" class="input" inputmode="numeric" placeholder="$ 5.000.000" data-money></div>
+                <div class="field"><label for="c-pmax" class="text-[0.875rem]">Hasta</label><input id="c-pmax" name="pmax" class="input" inputmode="numeric" placeholder="$ 30.000.000" data-money></div>
+              </div>
+            </fieldset>
+            <div class="relative z-[3] field">
+              <label for="c-detalles">Detalles del evento</label>
+              <textarea id="c-detalles" name="detalles" class="input" rows="3" placeholder="Música, decoración o cualquier otra observación que quieras compartirnos."></textarea>
+            </div>
+            <div class="relative z-[3]">
+              <button type="submit" class="fm-btn fm-btn-book">Enviar por WhatsApp
+                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </form>
+          <div class="poster poster-paper on-paper hidden p-8" data-cotizar-ok tabindex="-1">
+            <div class="relative z-[3]">
+              <p class="hand text-[2.2rem] leading-none text-[#a33f17]">¡Listo!</p>
+              <p class="mt-2 font-[Figtree] text-[1.8rem] font-extrabold leading-tight">Tu solicitud está lista.</p>
+              <p class="mt-3 text-[1.05rem] leading-relaxed text-[#344d82]">Se abrió WhatsApp con tus datos para que los envíes a nuestro equipo de eventos.</p>
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a class="fm-btn fm-btn-book" data-wa-link target="_blank" rel="noopener">¿No se abrió? Abrir WhatsApp</a>
+                <button type="button" class="fm-btn fm-btn-line" data-cotizar-edit>Editar mis datos</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>

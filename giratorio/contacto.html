@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es" data-brand="giratorio">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contacto, ubicación y horarios · La Fragata Giratorio</title>
+  <meta name="description" content="La Fragata Giratorio: Calle 100 # 8A-55, Torre C, Piso 12, World Trade Center, Bogotá. Lunes a sábado de 12 m a 10 p. m., domingo de 12 m a 5 p. m.">
+  <meta name="theme-color" content="#17213a">
+  <link rel="icon" href="../assets/img/giratorio/barco-azul.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+Canadian+Aboriginal:wght@300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module">
+    import { bindScrollHour } from "../assets/js/light.js";
+    bindScrollHour();
+    // Abierto o cerrado ahora, en hora de Bogotá.
+    const el = document.querySelector("[data-open-now]");
+    const now = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Bogota" }));
+    const day = now.getDay();
+    const h = now.getHours() + now.getMinutes() / 60;
+    const close = day === 0 ? 17 : 22;
+    const open = h >= 12 && h < close;
+    el.textContent = open
+      ? `Abierto ahora · cierra a las ${day === 0 ? "5 p. m." : "10 p. m."}`
+      : h < 12 ? "Cerrado ahora · abrimos hoy a las 12 m" : "Cerrado ahora · abrimos mañana a las 12 m";
+    el.dataset.state = open ? "open" : "closed";
+    document.querySelectorAll("[data-day]").forEach((row) => {
+      const days = row.dataset.day.split(",").map(Number);
+      if (days.includes(day)) row.setAttribute("aria-current", "date");
+    });
+  </script>
+</head>
+<body class="overflow-x-clip antialiased">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-on-dark">Saltar al contenido</a>
+
+  <div class="light-rig" aria-hidden="true"></div>
+  <div class="light-rig-night" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <a href="./" class="flex items-center gap-3" aria-label="La Fragata Giratorio, inicio">
+      <img src="../assets/img/giratorio/barco-azul.png" alt="" width="487" height="390" class="logo-dark h-7 w-auto">
+      <img src="../assets/img/giratorio/barco-blanco.png" alt="" width="487" height="389" class="logo-light h-7 w-auto">
+      <span class="font-display text-[1.05rem] tracking-[0.12em]">LA FRAGATA</span>
+    </a>
+    <nav aria-label="Principal" class="col-start-2 hidden items-center gap-8 text-[0.95rem] lg:flex">
+      <a class="nav-link" href="festival.html">Festival</a>
+      <a class="nav-link" href="eventos.html">Eventos</a>
+      <a class="nav-link" href="contacto.html" aria-current="page">Contacto</a>
+      <span class="muted cursor-not-allowed" aria-disabled="true" title="Próximamente">Carta</span>
+      <span class="muted cursor-not-allowed" aria-disabled="true" title="Próximamente">Gift Cards</span>
+    </nav>
+    <div class="col-start-3 flex items-center justify-self-end gap-3">
+      <a href="reservas.html" class="btn btn-book hidden min-h-[2.75rem] px-5 text-[0.95rem] sm:inline-flex">Reservar mesa</a>
+      <button type="button" class="grid size-11 place-items-center lg:hidden" data-menu-toggle aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div id="menu" class="menu-sheet lg:hidden" data-open="false">
+    <button type="button" class="absolute right-4 top-4 grid size-11 place-items-center" data-menu-toggle aria-label="Cerrar menú">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav aria-label="Menú" class="grid gap-1 font-display text-[2.6rem] leading-[1.15]">
+      <a href="./">Inicio</a>
+      <a href="festival.html">Festival</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="contacto.html" aria-current="page">Contacto</a>
+    </nav>
+    <p class="mt-8 text-[0.95rem] text-on-dark/70">Carta y Gift Cards llegan pronto.</p>
+  </div>
+
+  <main id="contenido">
+    <section data-hour="13.2" class="relative pt-[4.6rem] lg:grid lg:min-h-[100svh] lg:grid-cols-12 lg:items-center lg:pt-0">
+      <div class="photo-frame aspect-[4/3] lg:order-2 lg:col-span-6 lg:aspect-auto lg:h-[100svh]">
+        <img src="../assets/img/giratorio/eventos/terraza-2.webp" alt="Terraza del piso 12 con vista a la ciudad y los cerros orientales de Bogotá" width="1600" height="1200" class="photo photo-hero">
+      </div>
+      <div class="layer-text px-5 pb-16 pt-8 lg:order-1 lg:col-span-6 lg:py-28 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-12">
+        <h1 class="reveal text-[clamp(2.6rem,9vw,4.75rem)] leading-[0.98]">Ubicación y horarios</h1>
+        <p class="reveal mt-5 inline-flex items-center gap-2 text-[1rem]"><span class="open-dot" aria-hidden="true"></span><span data-open-now>Horario de hoy</span></p>
+
+        <div class="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-[1fr_1.15fr]">
+          <div>
+            <h2 class="muted font-body text-[0.9rem] font-normal">Dirección</h2>
+            <address class="mt-2 text-[1.12rem] not-italic leading-relaxed">Calle 100 # 8A-55<br>Torre C, Piso 12<br>World Trade Center, Bogotá</address>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <a class="btn btn-ghost min-h-[2.75rem] px-4 text-[0.95rem]" href="https://www.google.com/maps/search/?api=1&query=World+Trade+Center+Bogot%C3%A1+Calle+100+%23+8A-55+Torre+C" target="_blank" rel="noopener">Google Maps</a>
+              <a class="btn btn-ghost min-h-[2.75rem] px-4 text-[0.95rem]" href="https://waze.com/ul?q=World%20Trade%20Center%20Bogot%C3%A1%20Calle%20100&navigate=yes" target="_blank" rel="noopener">Waze</a>
+            </div>
+          </div>
+          <div>
+            <h2 class="muted font-body text-[0.9rem] font-normal">Horario</h2>
+            <dl class="hours mt-2 max-w-sm text-[1.05rem]">
+              <div data-day="1,2,3,4,5,6"><dt>Lunes a sábado</dt><dd class="tabular-nums">12 m a 10 p. m.</dd></div>
+              <div data-day="0"><dt>Domingo</dt><dd class="tabular-nums">12 m a 5 p. m.</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="rule mt-12"></div>
+        <dl class="mt-8 grid gap-6 sm:grid-cols-3">
+          <div>
+            <dt class="muted text-[0.9rem]">Reservas</dt>
+            <dd class="mt-1"><a class="underline" href="reservas.html">Reservar en línea</a></dd>
+            <dd class="muted mt-1 text-[0.9rem]"><a class="underline" href="https://wa.me/573102145472" target="_blank" rel="noopener">+57 310 214 5472</a></dd>
+          </div>
+          <div>
+            <dt class="muted text-[0.9rem]">Eventos</dt>
+            <dd class="mt-1"><a class="underline" href="eventos.html#cotizar">Cotizar un evento</a></dd>
+            <dd class="muted mt-1 text-[0.9rem]"><a class="underline" href="https://wa.me/573145974455" target="_blank" rel="noopener">+57 314 597 4455</a></dd>
+          </div>
+          <div>
+            <dt class="muted text-[0.9rem]">Redes</dt>
+            <dd class="mt-1"><a class="underline" href="https://instagram.com/lafragatagiratorio" target="_blank" rel="noopener">@lafragatagiratorio</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section data-hour="20" class="relative px-5 pb-36 pt-16 lg:pb-24" aria-label="Mapa">
+      <div class="layer-text mx-auto max-w-7xl lg:px-5">
+        <div class="map-frame">
+          <iframe title="Mapa: La Fragata Giratorio en el World Trade Center de Bogotá, Calle 100 # 8A-55" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=World+Trade+Center+Bogot%C3%A1,+Calle+100+%23+8A-55&z=16&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative px-5 pb-32 lg:pb-12">
+    <div class="layer-text mx-auto flex max-w-7xl flex-col gap-6 border-t border-current/15 pt-8 text-[0.95rem] lg:flex-row lg:items-center lg:justify-between lg:px-5">
+      <img src="../assets/img/giratorio/logo-blanco.png" alt="La Fragata Giratorio" width="900" height="730" loading="lazy" class="h-20 w-auto self-start object-contain lg:self-center">
+      <div class="flex flex-wrap gap-x-8 gap-y-3">
+        <a class="underline" href="https://instagram.com/lafragatagiratorio" target="_blank" rel="noopener">Instagram @lafragatagiratorio</a>
+        <span class="muted">Parte de Grupo Fragata</span>
+        <a class="muted underline" href="https://wa.me/573102145472" target="_blank" rel="noopener">Reservas por WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="book-bar sm:hidden" data-hidden="false">
+    <a href="reservas.html" class="btn btn-book flex-1">Reservar mesa</a>
+    <a href="eventos.html#cotizar" class="btn btn-ghost">Eventos</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,895 @@
+/*
+  Fish Market — «Cartel chicha del festival».
+  El muro es azul Fish Market (#223a84) en todas las páginas. Encima se pegan carteles de papel:
+  letras apiladas con degradé de dos tintas, franjas verdes, platos con flash recortados encima.
+  Todo va numerado en una columna fija y ningún estado depende solo del color (lleva sello).
+*/
+
+@layer base {
+  html[data-brand="fishmarket"] {
+    --cloth: #223a84;
+    --ink-on: #e9e2d1;
+    --muted-on: color-mix(in oklab, #e9e2d1 78%, #223a84);
+    --fm-night: #14224f;
+    --fm-wall: #223a84;
+    --fm-paper: #e9e2d1;
+    --fm-orange: #da5f27;
+    --fm-orange-ink: #b9481b;
+    --fm-green: #8fa454;
+    --fm-sky: #427ba2;
+    --fm-poster: "Big Shoulders Display", "Figtree", Impact, sans-serif;
+    --fm-title: "Filson Pro", "Figtree", system-ui, sans-serif;
+    --fm-hand: "Beth Ellen", cursive;
+    --fm-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  html[data-brand="fishmarket"] {
+    overflow-x: clip;
+  }
+  [data-brand="fishmarket"] body {
+    background-color: var(--fm-wall);
+  }
+  /* Grano del muro: ruido gris medio en soft-light, no oscurece el azul de marca. */
+  [data-brand="fishmarket"] body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 200px;
+    mix-blend-mode: soft-light;
+    opacity: 0.35;
+  }
+  [data-brand="fishmarket"] main,
+  [data-brand="fishmarket"] footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  [data-brand="fishmarket"] h1,
+  [data-brand="fishmarket"] h2,
+  [data-brand="fishmarket"] h3 {
+    font-family: var(--fm-title);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  [data-brand="fishmarket"] ::selection {
+    background: var(--fm-orange);
+    color: var(--fm-night);
+  }
+}
+
+@layer components {
+  /* ——— Navegación ——— */
+  [data-brand="fishmarket"] .site-nav::before {
+    background: var(--fm-wall);
+  }
+  [data-brand="fishmarket"] .site-nav[data-scrolled="true"]::before {
+    box-shadow: 0 1px 0 color-mix(in oklab, var(--fm-paper) 16%, transparent);
+  }
+  [data-brand="fishmarket"] .nav-link {
+    font-weight: 600;
+  }
+  [data-brand="fishmarket"] .nav-link[aria-current="page"]::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -0.45rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-left: -0.2rem;
+    border-radius: 50%;
+    background: var(--fm-orange);
+  }
+  [data-brand="fishmarket"] .menu-sheet {
+    background: var(--fm-orange-ink);
+    color: #fff;
+  }
+  [data-brand="fishmarket"] .menu-sheet nav {
+    font-family: var(--fm-poster);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 3.4rem;
+    line-height: 0.95;
+  }
+
+  /* ——— Botones: boletos impresos con sombra corrida ——— */
+  .fm-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3.25rem;
+    padding: 0 1.35rem;
+    border-radius: 0.35rem;
+    font-family: var(--fm-title);
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    user-select: none;
+    transition: transform 0.18s var(--ease-out-quart), box-shadow 0.18s var(--ease-out-quart), background-color 0.25s;
+  }
+  .fm-btn .arrow {
+    transition: transform 0.35s var(--ease-out-expo);
+  }
+  .fm-btn:hover .arrow {
+    transform: translateX(4px);
+  }
+  .fm-btn-book {
+    background: var(--fm-orange-ink);
+    color: #fff;
+    box-shadow: 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3);
+  }
+  .fm-btn-book:hover {
+    background: #a33f17;
+    transform: translate(-1px, -1px);
+    box-shadow: 0 14px 22px -8px rgb(5 10 30 / 0.65), 0 2px 3px rgb(5 10 30 / 0.3);
+  }
+  .fm-btn:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 4px 8px -4px rgb(5 10 30 / 0.6);
+  }
+  .fm-btn-line {
+    color: var(--ink-on);
+    box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--ink-on) 55%, transparent);
+  }
+  .fm-btn-line:hover {
+    box-shadow: inset 0 0 0 2px var(--ink-on);
+  }
+  .fm-btn-line:active {
+    transform: scale(0.98);
+    box-shadow: inset 0 0 0 2px var(--ink-on);
+  }
+  .on-paper .fm-btn-line {
+    color: var(--fm-wall);
+    box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--fm-wall) 55%, transparent);
+  }
+  .on-paper .fm-btn-line:hover {
+    box-shadow: inset 0 0 0 2px var(--fm-wall);
+  }
+  .fm-btn-step {
+    background: var(--fm-paper);
+    color: var(--fm-night);
+    box-shadow: 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3);
+  }
+  .fm-btn[disabled] {
+    opacity: 0.4;
+    pointer-events: none;
+    box-shadow: none;
+  }
+
+  /* Barra fija del celular */
+  [data-brand="fishmarket"] .book-bar {
+    border-radius: 0.6rem;
+    background: color-mix(in oklab, var(--fm-night) 90%, transparent);
+    box-shadow: 0 18px 40px -18px rgb(0 0 0 / 0.7), inset 0 0 0 1px color-mix(in oklab, var(--fm-paper) 14%, transparent);
+  }
+  [data-brand="fishmarket"] .book-bar .fm-btn {
+    min-height: 3rem;
+    box-shadow: none;
+  }
+  [data-brand="fishmarket"] .book-bar .fm-btn:active {
+    transform: scale(0.97);
+  }
+
+  /* ——— Carteles: papel real (máscara rasgada + engrudo + medio tono, rasters en assets/img/fishmarket/papel) ———
+     El color vive en ::before y la textura en ::after, ambos con la máscara del corte; el drop-shadow del
+     elemento sigue el borde rasgado. */
+  .poster {
+    --tilt: 0deg;
+    min-width: 0;
+    --poster-bg: var(--fm-night);
+    --torn: url("../img/fishmarket/papel/torn-alto.png");
+    position: relative;
+    isolation: isolate;
+    rotate: var(--tilt);
+    color: var(--fm-paper);
+    filter: drop-shadow(0 18px 22px rgb(5 10 30 / 0.45)) drop-shadow(0 2px 3px rgb(5 10 30 / 0.3));
+  }
+  .poster::before,
+  .poster::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    -webkit-mask: var(--torn) center / 100% 100% no-repeat;
+    mask: var(--torn) center / 100% 100% no-repeat;
+  }
+  .poster::before {
+    z-index: -1;
+    background: var(--poster-bg);
+  }
+  .poster::after {
+    z-index: 2;
+    background: url("../img/fishmarket/papel/semitono.png") 0 0 / 300px, url("../img/fishmarket/papel/engrudo.webp") center / cover;
+    mix-blend-mode: soft-light;
+    opacity: 0.9;
+  }
+  .poster-wide {
+    --torn: url("../img/fishmarket/papel/torn-ancho.png");
+  }
+  .poster-strip {
+    --torn: url("../img/fishmarket/papel/torn-franja.png");
+  }
+  .poster-paper {
+    --poster-bg: var(--fm-paper);
+    color: var(--fm-wall);
+  }
+  .poster-orange {
+    --poster-bg: var(--fm-orange-ink);
+    color: #fff;
+  }
+  .poster-green {
+    --poster-bg: var(--fm-green);
+    color: var(--fm-night);
+  }
+  .poster-sky {
+    --poster-bg: var(--fm-sky);
+    color: var(--fm-night);
+  }
+  .torn {
+  }
+
+  /* Pegado al muro: el cartel cae con un golpe seco y se asienta. */
+  .js .paste:not(.is-in) {
+    opacity: 0;
+    transform: scale(1.07) translateY(-10px);
+    rotate: calc(var(--tilt, 0deg) - 3deg);
+  }
+  .paste {
+    transition: opacity 0.35s ease-out, transform 0.55s cubic-bezier(0.2, 1.4, 0.4, 1), rotate 0.55s cubic-bezier(0.2, 1.4, 0.4, 1);
+    transition-delay: var(--d, 0ms);
+  }
+
+  /* Letras apiladas: cada palabra llena el ancho del cartel (fit-text en JS) */
+  .stack {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+    font-family: var(--fm-poster);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.84;
+    letter-spacing: -0.005em;
+  }
+  /* Cada línea es una caja; cada letra (<i>, la pone fm.js) lleva su giro y su salto, como rotulada a mano.
+     Segunda tinta: contorno navy y un desregistro en azul cielo detrás. */
+  .stack > span {
+    display: block;
+    white-space: nowrap;
+    font-size: var(--fit, 18vw);
+    filter: drop-shadow(0.05em 0.045em 0 var(--fm-sky)) drop-shadow(0.025em 0.03em 0 var(--fm-night));
+  }
+  .stack > span > i {
+    display: inline-block;
+    font-style: normal;
+    rotate: var(--r, 0deg);
+    translate: 0 var(--y, 0);
+    background: linear-gradient(180deg, var(--fm-paper) 0 38%, #f2b07d 58%, var(--fm-orange) 82%);
+    background-size: 100% 220%;
+    background-position: 0 var(--fill, 0%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 0.014em var(--fm-night);
+  }
+  .stack > span:nth-child(2) > i {
+    background-image: linear-gradient(180deg, var(--fm-orange) 0 30%, #f2b07d 58%, var(--fm-paper) 86%);
+  }
+  .stack.stack-ink > span {
+    filter: drop-shadow(0.04em 0.035em 0 rgb(20 34 79 / 0.35));
+  }
+  .stack.stack-ink > span > i,
+  .stack.stack-ink > span:nth-child(2) > i {
+    background: none;
+    color: inherit;
+    -webkit-text-stroke: 0;
+    animation: none;
+  }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .stack > span > i {
+        animation: refill linear both;
+        animation-timeline: view();
+        animation-range: entry 10% cover 60%;
+      }
+    }
+  }
+
+  /* Franja de datos */
+  .band {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.8rem;
+    padding: 0.55rem 0.9rem;
+    background: var(--fm-green);
+    color: var(--fm-night);
+    font-family: var(--fm-title);
+    font-weight: 800;
+    font-size: clamp(0.95rem, 3.6vw, 1.15rem);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .hand {
+    font-family: var(--fm-hand);
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* Índice numerado de margen */
+  .num {
+    font-family: var(--fm-poster);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+  }
+  /* ——— Cinta de las muchas formas ——— */
+  .marquee {
+    overflow: hidden;
+    background: var(--fm-green);
+    color: var(--fm-night);
+    rotate: -1.2deg;
+    margin-inline: -1rem;
+    box-shadow: 0 14px 28px -18px rgb(0 0 0 / 0.6);
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 38s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .marquee-track > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 0.7rem 0.7rem;
+    font-family: var(--fm-poster);
+    font-weight: 900;
+    font-size: clamp(1.9rem, 7vw, 3.4rem);
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .marquee-track img {
+    width: 2.2rem;
+    height: auto;
+  }
+
+  /* ——— Las formas ——— */
+  .forma {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3.2rem 1fr auto;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+    padding: 1.15rem 0;
+    border-top: 2px solid color-mix(in oklab, var(--fm-paper) 22%, transparent);
+    transition: color 0.3s;
+  }
+  .forma:last-child {
+    border-bottom: 2px solid color-mix(in oklab, var(--fm-paper) 22%, transparent);
+  }
+  .forma .num {
+    font-size: 1.25rem;
+    color: #f2b07d;
+  }
+  .forma-name {
+    font-family: var(--fm-poster);
+    font-weight: 900;
+    font-size: clamp(2.6rem, 11vw, 5.2rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    transition: transform 0.5s var(--ease-out-expo), color 0.3s;
+    transform-origin: left center;
+  }
+  .forma-how {
+    grid-column: 2 / 4;
+    color: var(--muted-on);
+    font-size: 1rem;
+    max-width: 40ch;
+  }
+  .forma-count {
+    font-family: var(--fm-title);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted-on);
+    white-space: nowrap;
+  }
+  .forma[data-on="true"] .forma-name {
+    color: #f2b07d;
+    transform: translateX(0.4rem);
+  }
+  @media (min-width: 64rem) {
+    .forma-how {
+      grid-column: 2;
+    }
+  }
+  .forma-photo {
+    position: sticky;
+    top: 6rem;
+  }
+  .forma-photo img {
+    transition: opacity 0.35s, transform 0.6s var(--ease-out-expo);
+  }
+  .forma-photo[data-swap="true"] img {
+    opacity: 0;
+    transform: scale(0.96) rotate(-2deg);
+  }
+
+  /* ——— Foto con flash ——— */
+  .flash-frame {
+    position: relative;
+    overflow: hidden;
+    background: var(--fm-night);
+  }
+  .flash-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .flash-frame img[hidden] {
+    display: none;
+  }
+  .flash-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 42%, rgb(255 255 255 / 0.95), rgb(255 255 255 / 0.4) 45%, transparent 75%);
+    opacity: 0;
+  }
+  .flash-frame.pop::before {
+    animation: flash 0.55s ease-out;
+  }
+  .date-stamp {
+    position: absolute;
+    z-index: 2;
+    right: 0.6rem;
+    bottom: 0.45rem;
+    font-family: "Courier New", ui-monospace, monospace;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: #ff9a4d;
+    text-shadow: 0 0 6px rgb(255 120 40 / 0.65);
+  }
+
+  /* Plato recortado sobre el cartel */
+  .cutout {
+    filter: drop-shadow(10px 22px 18px rgb(10 16 40 / 0.45)) drop-shadow(0 6px 10px rgb(0 0 0 / 0.35));
+  }
+
+  /* ——— Tarjeta de plato (cartelito) ——— */
+  .dish-card {
+    --tilt: 0deg;
+    position: relative;
+    display: grid;
+    width: 100%;
+    text-align: left;
+    background: var(--fm-paper);
+    color: var(--fm-wall);
+    rotate: var(--tilt);
+    box-shadow: 0 20px 34px -24px rgb(0 0 0 / 0.8), 0 2px 4px rgb(0 0 0 / 0.2);
+    transition: rotate 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
+  }
+  .dish-card:hover,
+  .dish-card:focus-visible {
+    rotate: 0deg;
+    transform: translateY(-6px);
+    box-shadow: 0 30px 40px -24px rgb(0 0 0 / 0.85), 0 2px 4px rgb(0 0 0 / 0.2);
+  }
+  .dish-card:active {
+    transform: translateY(-2px) scale(0.99);
+  }
+  .dish-card .flash-frame {
+    aspect-ratio: 1;
+    margin: 0.6rem 0.6rem 0;
+  }
+  .dish-card .body {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.8rem 0.9rem 1rem;
+  }
+  .dish-card .name {
+    font-family: var(--fm-title);
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+  .dish-card .desc {
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: #344d82;
+  }
+  .dish-card .price {
+    font-family: var(--fm-title);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: #a33f17;
+    font-size: 1.05rem;
+    margin-top: 0.2rem;
+  }
+  .dish-card .badge {
+    position: absolute;
+    z-index: 3;
+    top: 0.1rem;
+    left: 0.1rem;
+    display: grid;
+    place-items: center;
+    min-width: 2.9rem;
+    height: 2.9rem;
+    padding: 0 0.35rem;
+    background: var(--fm-orange-ink);
+    color: #fff;
+    font-family: var(--fm-poster);
+    font-weight: 900;
+    font-size: 1.45rem;
+    font-variant-numeric: tabular-nums;
+    box-shadow: 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3);
+  }
+
+  /* Placa de categoría sin foto: cartelito tipográfico */
+  .cat-plate {
+    position: relative;
+    display: grid;
+    align-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0.9rem;
+    background: var(--plate-bg, var(--fm-night));
+    color: var(--plate-ink, var(--fm-paper));
+  }
+  .cat-plate > * {
+    min-width: 0;
+  }
+  .cat-plate .stack {
+    width: 100%;
+    justify-items: start;
+  }
+  .cat-plate .stack.stack-ink > span {
+    color: var(--plate-ink);
+    filter: none;
+  }
+  .cat-plate .stack.stack-ink > span:nth-child(2) {
+    color: var(--plate-alt);
+  }
+  .cat-plate .hand {
+    justify-self: end;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--plate-alt);
+  }
+
+  /* ——— Pestañas de categoría: etiquetas pegadas ——— */
+  .tabs {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0.5rem 0.25rem 0.9rem;
+    scroll-snap-type: x proximity;
+  }
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .tab {
+    position: relative;
+    flex: none;
+    scroll-snap-align: center;
+    min-height: 2.9rem;
+    padding: 0 1rem;
+    border-radius: 0.3rem;
+    font-family: var(--fm-title);
+    font-weight: 800;
+    font-size: 0.92rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--ink-on);
+    box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--fm-paper) 35%, transparent);
+    transition: background-color 0.25s, color 0.25s, rotate 0.4s var(--ease-out-expo), box-shadow 0.25s;
+  }
+  .tab:hover {
+    box-shadow: inset 0 0 0 2px var(--fm-paper);
+  }
+  .tab .c {
+    margin-left: 0.4rem;
+    opacity: 0.7;
+    font-variant-numeric: tabular-nums;
+  }
+  .tab[aria-selected="true"] {
+    background: var(--fm-paper);
+    color: var(--fm-wall);
+    rotate: -2deg;
+    box-shadow: inset 0 -3px 0 var(--fm-orange-ink), 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3);
+  }
+  /* Sello: lo elegido se marca con forma, no solo con color */
+  .tab[aria-selected="true"]::after,
+  .stamp-on::after {
+    content: "";
+    position: absolute;
+    top: -0.45rem;
+    right: -0.45rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 50%;
+    background: var(--fm-orange-ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 70% no-repeat;
+    box-shadow: 0 0 0 2px var(--fm-wall);
+    animation: stamp 0.35s cubic-bezier(0.2, 1.5, 0.4, 1);
+  }
+
+  /* ——— Hoja del plato ——— */
+  [data-brand="fishmarket"] .sheet {
+    background: var(--fm-paper);
+    color: var(--fm-wall);
+  }
+
+  /* ——— Formularios sobre papel ——— */
+  .on-paper {
+    --ink-on: #223a84;
+    --muted-on: #344d82;
+    color: var(--fm-wall);
+  }
+  [data-brand="fishmarket"] .on-paper .input {
+    background: #fff;
+    color: var(--fm-wall);
+    box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--fm-wall) 30%, transparent);
+    border-radius: 0.35rem;
+  }
+  [data-brand="fishmarket"] .on-paper .input:focus {
+    box-shadow: inset 0 0 0 2px var(--fm-wall), 0 0 0 3px color-mix(in oklab, var(--fm-orange) 45%, transparent);
+  }
+  [data-brand="fishmarket"] .on-paper .input::placeholder {
+    color: #5d6f96;
+  }
+  [data-brand="fishmarket"] .on-paper .input[aria-invalid="true"],
+  [data-brand="fishmarket"] .input[aria-invalid="true"] {
+    box-shadow: inset 0 0 0 2px var(--fm-orange-ink);
+  }
+  [data-brand="fishmarket"] .field-error {
+    color: #a33f17;
+    font-weight: 600;
+  }
+  [data-brand="fishmarket"] .input {
+    border-radius: 0.35rem;
+  }
+  [data-brand="fishmarket"] .scale label,
+  [data-brand="fishmarket"] .yesno label {
+    border-radius: 0.3rem;
+    font-weight: 700;
+  }
+  [data-brand="fishmarket"] .scale input:checked + label,
+  [data-brand="fishmarket"] .yesno input:checked + label {
+    position: relative;
+    background: var(--fm-wall);
+    color: var(--fm-paper);
+    box-shadow: inset 0 -3px 0 var(--fm-orange-ink), 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3);
+  }
+
+  /* Reservas: días, horas, personas */
+  [data-brand="fishmarket"] .day > span,
+  [data-brand="fishmarket"] .slot span {
+    border-radius: 0.35rem;
+  }
+  [data-brand="fishmarket"] .day input:checked + span,
+  [data-brand="fishmarket"] .slot input:checked + span {
+    position: relative;
+    background: var(--fm-paper);
+    color: var(--fm-wall);
+    box-shadow: inset 0 -3px 0 var(--fm-orange-ink), 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3);
+  }
+  [data-brand="fishmarket"] .day input:checked + span::after,
+  [data-brand="fishmarket"] .slot input:checked + span::after {
+    content: "";
+    position: absolute;
+    top: -0.4rem;
+    right: -0.4rem;
+    width: 1.05rem;
+    height: 1.05rem;
+    border-radius: 50%;
+    background: var(--fm-orange-ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 70% no-repeat;
+    box-shadow: 0 0 0 2px var(--fm-wall);
+    animation: stamp 0.35s cubic-bezier(0.2, 1.5, 0.4, 1);
+  }
+  [data-brand="fishmarket"] .count {
+    font-family: var(--fm-poster);
+    font-weight: 900;
+  }
+  [data-brand="fishmarket"] .stepper button {
+    border-radius: 0.35rem;
+  }
+
+  .step-rail {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  .step-rail li {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.7rem;
+    font-family: var(--fm-title);
+    font-weight: 800;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted-on);
+    box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--fm-paper) 22%, transparent);
+    border-radius: 0.3rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .step-rail li .num {
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+  .step-rail li[data-done="true"] {
+    background: var(--fm-paper);
+    color: var(--fm-wall);
+    box-shadow: none;
+  }
+  .step-rail li[data-current="true"] {
+    background: var(--fm-orange-ink);
+    color: #fff;
+    box-shadow: 0 10px 18px -8px rgb(5 10 30 / 0.6), 0 2px 3px rgb(5 10 30 / 0.3);
+  }
+
+  .ticket {
+    position: relative;
+    background: var(--fm-paper);
+    color: var(--fm-wall);
+    -webkit-mask: radial-gradient(circle at 0 50%, transparent 0.7rem, #000 0.72rem) left / 51% 100% no-repeat,
+      radial-gradient(circle at 100% 50%, transparent 0.7rem, #000 0.72rem) right / 51% 100% no-repeat;
+    mask: radial-gradient(circle at 0 50%, transparent 0.7rem, #000 0.72rem) left / 51% 100% no-repeat,
+      radial-gradient(circle at 100% 50%, transparent 0.7rem, #000 0.72rem) right / 51% 100% no-repeat;
+  }
+
+  .seal {
+    position: absolute;
+    right: 1.2rem;
+    top: 3.6rem;
+    padding: 0.35rem 0.8rem;
+    border: 3px solid #a33f17;
+    border-radius: 0.4rem;
+    color: #a33f17;
+    font-family: var(--fm-poster);
+    font-weight: 900;
+    font-size: 1.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    rotate: -12deg;
+    mix-blend-mode: multiply;
+    animation: seal 0.5s cubic-bezier(0.2, 1.5, 0.4, 1) both;
+  }
+
+  /* Hora de hoy */
+  [data-brand="fishmarket"] .open-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--fm-orange);
+  }
+  [data-brand="fishmarket"] .open-dot:has(+ [data-state="open"]) {
+    background: var(--fm-green);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--fm-green) 30%, transparent);
+  }
+
+  /* Galería horizontal arrastrable */
+  .drag-row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(72vw, 19rem);
+    gap: 1.4rem;
+    overflow-x: auto;
+    padding: 2rem max(1.25rem, calc((100vw - 80rem) / 2 + 2.5rem)) 2.5rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: max(1.25rem, calc((100vw - 80rem) / 2 + 2.5rem));
+    scrollbar-width: none;
+    cursor: grab;
+  }
+  .drag-row::-webkit-scrollbar {
+    display: none;
+  }
+  .drag-row.dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+  }
+  .drag-row.dragging * {
+    pointer-events: none;
+  }
+  .drag-row > * {
+    scroll-snap-align: start;
+  }
+
+  .fm-photo {
+    position: relative;
+    overflow: hidden;
+    background: var(--fm-night);
+  }
+  .fm-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-out-expo);
+  }
+  .fm-photo:hover img {
+    transform: scale(1.04);
+  }
+  .fm-cap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 0.4rem 0.65rem;
+    background: var(--fm-paper);
+    color: var(--fm-wall);
+    font-family: var(--fm-title);
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+@keyframes refill {
+  from {
+    background-position: 0 100%;
+  }
+  to {
+    background-position: 0 0%;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes seal {
+  from {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes stamp {
+  from {
+    transform: scale(1.8) rotate(-20deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .paste:not(.is-in) {
+    opacity: 1;
+    transform: none;
+    rotate: var(--tilt, 0deg);
+  }
+  .marquee-track {
+    animation: none;
+  }
+}

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es" data-brand="giratorio">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Reservar mesa · La Fragata Giratorio</title>
+  <meta name="description" content="Reserva tu mesa en La Fragata Giratorio: elige fecha y hora, número de personas y confirma.">
+  <meta name="theme-color" content="#17213a">
+  <link rel="icon" href="../assets/img/giratorio/barco-azul.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+Canadian+Aboriginal:wght@300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/reservas.js"></script>
+</head>
+<body class="overflow-x-clip antialiased">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-on-dark">Saltar al contenido</a>
+
+  <div class="light-rig" aria-hidden="true"></div>
+  <div class="light-rig-night" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <a href="./" class="flex items-center gap-3" aria-label="La Fragata Giratorio, inicio">
+      <img src="../assets/img/giratorio/barco-azul.png" alt="" width="487" height="390" class="logo-dark h-7 w-auto">
+      <img src="../assets/img/giratorio/barco-blanco.png" alt="" width="487" height="389" class="logo-light h-7 w-auto">
+      <span class="font-display text-[1.05rem] tracking-[0.12em]">LA FRAGATA</span>
+    </a>
+    <nav aria-label="Principal" class="col-start-2 hidden items-center gap-8 text-[0.95rem] lg:flex">
+      <a class="nav-link" href="festival.html">Festival</a>
+      <a class="nav-link" href="reservas.html" aria-current="page">Reservas</a>
+      <a class="nav-link" href="eventos.html">Eventos</a>
+      <a class="nav-link" href="contacto.html">Contacto</a>
+      <span class="muted cursor-not-allowed" aria-disabled="true" title="Próximamente">Carta</span>
+      <span class="muted cursor-not-allowed" aria-disabled="true" title="Próximamente">Gift Cards</span>
+    </nav>
+    <div class="col-start-3 flex items-center justify-self-end gap-3">
+      <a href="festival.html" class="btn btn-ghost hidden min-h-[2.75rem] px-5 text-[0.95rem] sm:inline-flex">Ver festival</a>
+      <button type="button" class="grid size-11 place-items-center lg:hidden" data-menu-toggle aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div id="menu" class="menu-sheet lg:hidden" data-open="false">
+    <button type="button" class="absolute right-4 top-4 grid size-11 place-items-center" data-menu-toggle aria-label="Cerrar menú">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav aria-label="Menú" class="grid gap-1 font-display text-[2.6rem] leading-[1.15]">
+      <a href="./">Inicio</a>
+      <a href="festival.html">Festival</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="reservas.html" aria-current="page">Reservas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <p class="mt-8 text-[0.95rem] text-on-dark/70">Carta y Gift Cards llegan pronto.</p>
+  </div>
+
+  <main id="contenido" class="relative min-h-[100svh] pt-20 lg:grid lg:grid-cols-12 lg:gap-10 lg:pt-0">
+    <!-- La mesa: el plato con la luz de la hora elegida -->
+    <div class="relative h-[26svh] overflow-hidden lg:sticky lg:overflow-visible lg:top-0 lg:col-span-6 lg:h-[100svh]" aria-hidden="true">
+      <img src="../assets/img/giratorio/platos/puerto-caribe.webp" alt="" width="1400" height="1374"
+        class="plate absolute left-[38%] top-[-6%] h-[118%] w-auto max-w-none lg:top-1/2 lg:-translate-y-1/2 transition-[rotate] duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] lg:left-[44%] lg:h-[min(64svh,36vw)] lg:-translate-x-1/2"
+        data-table-plate>
+    </div>
+
+    <div class="layer-text px-5 pb-24 pt-6 lg:col-span-6 lg:flex lg:min-h-[100svh] lg:flex-col lg:justify-center lg:py-28 lg:pl-12 xl:pl-20 lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))]">
+      <div class="mx-auto w-full max-w-[34rem] lg:mx-0">
+        <h1 class="text-[clamp(2.4rem,8vw,3.75rem)] leading-[1.02]">Reserva tu mesa</h1>
+        <p class="muted mt-3 text-[1.02rem] leading-relaxed">Nuestras puertas están abiertas siempre para ti, pero nunca sobra ser precavido y reservar una mesa.</p>
+
+        <ol class="stations mt-8" aria-hidden="true" data-stations>
+          <li data-done="true"></li><li></li><li></li>
+        </ol>
+
+        <form class="mt-8" novalidate data-booking>
+          <!-- 1 · Fecha y hora -->
+          <section class="step grid gap-7" data-step="1" aria-labelledby="s1">
+            <h2 id="s1" class="text-[1.75rem] leading-tight" tabindex="-1">¿Cuándo vienes?</h2>
+            <fieldset>
+              <legend class="mb-3 text-[0.95rem] font-medium">Fecha</legend>
+              <div class="days" data-days></div>
+            </fieldset>
+            <fieldset>
+              <legend class="mb-3 text-[0.95rem] font-medium">Hora <span class="muted font-normal" data-day-hours></span></legend>
+              <div class="slots" data-slots></div>
+              <p class="muted mt-3 text-[0.9rem]" data-slots-empty hidden>Ya no quedan horas para hoy. Elige otro día.</p>
+            </fieldset>
+            <button type="button" class="btn bg-ink text-on-dark [html[data-tone=dark]_&]:bg-on-dark [html[data-tone=dark]_&]:text-ink" data-next disabled>Continuar</button>
+          </section>
+
+          <!-- 2 · Personas y zona -->
+          <section class="step grid gap-8" data-step="2" aria-labelledby="s2" hidden>
+            <h2 id="s2" class="text-[1.75rem] leading-tight" tabindex="-1">¿Cuántas personas?</h2>
+            <fieldset>
+              <legend class="mb-3 text-[0.95rem] font-medium">Personas</legend>
+              <div class="grid grid-cols-6 gap-2" data-people>
+                <label class="slot"><input type="radio" name="personas" value="1"><span>1</span></label>
+                <label class="slot"><input type="radio" name="personas" value="2" checked><span>2</span></label>
+                <label class="slot"><input type="radio" name="personas" value="3"><span>3</span></label>
+                <label class="slot"><input type="radio" name="personas" value="4"><span>4</span></label>
+                <label class="slot"><input type="radio" name="personas" value="5"><span>5</span></label>
+                <label class="slot"><input type="radio" name="personas" value="6"><span>6+</span></label>
+              </div>
+            </fieldset>
+            <div class="stepper" data-big hidden>
+              <button type="button" data-minus aria-label="Una persona menos">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg>
+              </button>
+              <p class="text-center"><output class="count" data-count aria-live="polite">6</output><span class="muted block text-[0.95rem]">personas</span></p>
+              <button type="button" data-plus aria-label="Una persona más">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <p class="text-[0.95rem] leading-relaxed" data-group-note hidden>Para más de 12 personas, cotiza tu evento con nuestro equipo en <a class="underline" href="eventos.html#cotizar">Eventos</a>.</p>
+            <fieldset>
+              <legend class="mb-3 text-[0.95rem] font-medium">Zona</legend>
+              <div class="grid grid-cols-3 gap-2" data-zone>
+                <label class="slot"><input type="radio" name="zona" value="Ventanal" checked><span>Ventanal</span></label>
+                <label class="slot"><input type="radio" name="zona" value="Bar 100"><span>Bar 100</span></label>
+                <label class="slot"><input type="radio" name="zona" value="Sin preferencia"><span class="px-2 text-center leading-tight">Sin preferencia</span></label>
+              </div>
+            </fieldset>
+            <div class="flex gap-3">
+              <button type="button" class="btn btn-ghost" data-back>Atrás</button>
+              <button type="button" class="btn flex-1 bg-ink text-on-dark [html[data-tone=dark]_&]:bg-on-dark [html[data-tone=dark]_&]:text-ink" data-next>Continuar</button>
+            </div>
+          </section>
+
+          <!-- 3 · Datos y confirmación -->
+          <section class="step grid gap-7" data-step="3" aria-labelledby="s3" hidden>
+            <h2 id="s3" class="text-[1.75rem] leading-tight" tabindex="-1">Tus datos</h2>
+            <dl class="grid grid-cols-2 gap-4 rounded-[1.25rem] p-5 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink-on)_25%,transparent)] sm:grid-cols-4" data-summary>
+              <div><dt class="muted text-[0.85rem]">Fecha</dt><dd class="mt-1 leading-snug" data-sum-date></dd></div>
+              <div><dt class="muted text-[0.85rem]">Hora</dt><dd class="hour-stamp mt-1 font-display text-[1.6rem] leading-none" data-sum-time></dd></div>
+              <div><dt class="muted text-[0.85rem]">Personas</dt><dd class="mt-1 font-display text-[1.6rem] leading-none" data-sum-people></dd></div>
+              <div><dt class="muted text-[0.85rem]">Zona</dt><dd class="mt-1 leading-snug" data-sum-zone></dd></div>
+            </dl>
+            <div class="grid gap-5">
+              <div class="field">
+                <label for="r-nombre">Nombre</label>
+                <input id="r-nombre" name="nombre" class="input" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="r-tel">Teléfono</label>
+                <input id="r-tel" name="telefono" class="input" type="tel" inputmode="tel" autocomplete="tel" placeholder="310 555 0142" required>
+              </div>
+              <fieldset>
+                <legend class="mb-3 text-[0.95rem] font-medium">Ocasión <span class="muted font-normal">(opcional)</span></legend>
+                <div class="grid grid-cols-3 gap-2" data-occasion>
+                  <label class="slot"><input type="radio" name="ocasion" value="Aniversario"><span>Aniversario</span></label>
+                  <label class="slot"><input type="radio" name="ocasion" value="Cumpleaños"><span>Cumpleaños</span></label>
+                  <label class="slot"><input type="radio" name="ocasion" value="Negocios"><span>Negocios</span></label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="flex gap-3">
+              <button type="button" class="btn btn-ghost" data-back>Atrás</button>
+              <button type="submit" class="btn btn-book flex-1">Confirmar reserva</button>
+            </div>
+          </section>
+
+          <!-- 4 · Confirmación por WhatsApp -->
+          <section class="step grid gap-6" data-step="4" aria-labelledby="s4" hidden>
+            <svg class="size-14" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="28" cy="28" r="26" stroke-dasharray="164" stroke-dashoffset="164" style="animation: draw 0.9s var(--ease-out-expo) forwards"/>
+              <path d="M18 29l7 7 13-15" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40" stroke-dashoffset="40" style="animation: draw 0.6s 0.45s var(--ease-out-expo) forwards"/>
+            </svg>
+            <h2 id="s4" class="text-[clamp(2rem,7vw,3rem)] leading-tight" tabindex="-1">Te esperamos, <span data-ok-name></span></h2>
+            <p class="text-[1.1rem] leading-relaxed" data-ok-line></p>
+
+            <figure class="wa-chat" aria-label="Así te llega la confirmación por WhatsApp">
+              <figcaption class="wa-head">
+                <img src="../assets/img/giratorio/barco-azul.png" alt="" width="487" height="390" class="h-5 w-auto">
+                <span><strong class="block text-[0.95rem] font-medium">La Fragata Giratorio</strong><span class="text-[0.8rem] opacity-80">Cuenta de empresa</span></span>
+              </figcaption>
+              <div class="wa-body">
+                <p class="wa-msg" data-wa-confirm></p>
+                <p class="wa-day">El día de tu reserva</p>
+                <div class="wa-msg">
+                  <p data-wa-remind></p>
+                  <div class="wa-replies">
+                    <button type="button" data-wa-reply="si">Sí, ahí estaré</button>
+                    <button type="button" data-wa-reply="cambiar">Cambiar</button>
+                  </div>
+                </div>
+                <p class="wa-msg wa-out" data-wa-answer hidden>Sí, ahí estaré</p>
+              </div>
+            </figure>
+
+            <p class="muted text-[0.95rem] leading-relaxed">Calle 100 # 8A-55, Torre C, Piso 12 · World Trade Center</p>
+            <div class="flex flex-wrap gap-3">
+              <a class="btn btn-ghost" data-ics download="reserva-la-fragata.ics">Agregar al calendario</a>
+              <a class="btn btn-ghost" href="festival.html">Ver el festival</a>
+            </div>
+            <p class="muted text-[0.85rem]">Prototipo: esta reserva todavía no se envía al restaurante y el mensaje de WhatsApp es una simulación.</p>
+          </section>
+        </form>
+
+        <p class="muted mt-10 text-[0.9rem]" data-wa>¿Prefieres escribirnos? <a class="underline" href="https://wa.me/573102145472" target="_blank" rel="noopener">Reserva por WhatsApp</a></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

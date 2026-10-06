@@ -1,0 +1,1298 @@
+@import "tailwindcss";
+@source "../giratorio";
+@source "../fishmarket";
+@source "../assets/js";
+@import "./fishmarket.css";
+
+/*
+  Una plantilla, dos marcas. Cada página declara <html data-brand="giratorio|fishmarket">.
+  Fuentes comerciales (Sorento, Pulshkin High, Filson Pro) pendientes de archivos del cliente:
+  mientras tanto caen en los sustitutos de Google Fonts.
+*/
+
+@theme {
+  --color-ink: var(--brand-ink);
+  --color-primary: var(--brand-primary);
+  --color-secondary: var(--brand-secondary);
+  --color-accent: var(--brand-accent);
+  --color-olive: var(--brand-olive);
+  --color-surface: var(--brand-surface);
+  --color-on-dark: var(--brand-on-dark);
+  --color-paper: var(--brand-paper);
+  --color-paper-2: var(--brand-paper-2);
+  --color-paper-muted: var(--brand-paper-muted);
+
+  --font-display: var(--brand-font-display);
+  --font-body: "Noto Sans Canadian Aboriginal", "Noto Sans", system-ui, sans-serif;
+  --font-detail: var(--brand-font-detail);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@layer base {
+  /* La Fragata Giratorio — #17213a · #506c9b · #223a84 · #646637 · #51122b */
+  [data-brand="giratorio"] {
+    --brand-ink: #17213a;
+    --brand-primary: #223a84;
+    --brand-secondary: #506c9b;
+    --brand-accent: #51122b;
+    --brand-olive: #646637;
+    --brand-surface: #e8ecf1;
+    --brand-on-dark: #eef1f5;
+    --brand-accent-hover: #64183a;
+    --brand-on-accent: #f7eef1;
+    --brand-paper: #eef1f5;
+    --brand-paper-2: #dfe4eb;
+    --brand-paper-muted: #33466a;
+    --brand-photo: #2a2622;
+    --brand-placeholder: #5a6886;
+    --brand-placeholder-dark: #aeb9cc;
+    --brand-font-display: "Sorento", "Marcellus", Georgia, serif;
+    --brand-font-detail: "Pulshkin High", "Noto Sans Canadian Aboriginal", sans-serif;
+  }
+
+  /* Fish Market — #223a84 · #427ba2 · #e9e2d1 · #da5f27 · #8fa454 */
+  [data-brand="fishmarket"] {
+    --brand-ink: #223a84;
+    --brand-primary: #223a84;
+    --brand-secondary: #427ba2;
+    --brand-accent: #da5f27;
+    --brand-olive: #8fa454;
+    --brand-surface: #e9e2d1;
+    --brand-on-dark: #e9e2d1;
+    /* El naranja de marca no da 4.5:1 con texto blanco; la acción usa su tono profundo. */
+    --brand-accent-strong: #b9481b;
+    --brand-accent-hover: #a33f17;
+    --brand-on-accent: #ffffff;
+    --brand-paper: #f7f3ea;
+    --brand-paper-2: #ece4d3;
+    --brand-paper-muted: #344d82;
+    --brand-photo: #1d2a52;
+    --brand-placeholder: #5d6f96;
+    --brand-placeholder-dark: #b8c3d9;
+    --brand-font-display: "Filson Pro", "Figtree", system-ui, sans-serif;
+    --brand-font-detail: "Beth Ellen", cursive;
+  }
+
+  /*
+    Rig de luz. light.js escribe --cloth (color del mantel), --ink-on (texto sobre él),
+    --muted-on, --shadow-a (ángulo), --shadow-o (opacidad) y --night (luz fría de la ciudad), más --psx/--psy (sombra del plato)
+    según la hora. Estos son los valores de mediodía, por si el JS no corre.
+  */
+  :root {
+    --cloth: var(--brand-surface);
+    --ink-on: var(--brand-ink);
+    --muted-on: #33466a;
+    --shadow-a: -28deg;
+    --shadow-x: 0px;
+    --shadow-o: 0.32;
+    --night: 0;
+    --psx: 6px;
+    --psy: 16px;
+    --bar-h: 4.5rem;
+    /* Luz dura de ventanal, cálida: oliva de marca aclarado hacia el blanco de la paleta. */
+    --shaft: color-mix(in oklab, var(--brand-olive) 82%, var(--brand-on-dark));
+  }
+
+  html {
+    font-family: var(--font-body);
+    color: var(--ink-on);
+    background: var(--cloth);
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--cloth);
+    color: var(--ink-on);
+    transition: background-color 0.6s linear, color 0.6s linear;
+  }
+
+  ::selection {
+    background: var(--brand-primary);
+    color: var(--brand-paper);
+  }
+
+  fieldset {
+    min-width: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  [tabindex="-1"]:focus,
+  [tabindex="-1"]:focus-visible {
+    outline: none;
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+@layer components {
+  /* ——— Capa de sombra de ventanal: fija, entre los platos (z 1) y el texto (z 3) ——— */
+  .light-rig {
+    position: fixed;
+    inset: -20vmax;
+    z-index: 2;
+    pointer-events: none;
+    opacity: var(--shadow-o);
+    mix-blend-mode: multiply;
+    transform: translateX(var(--shadow-x)) rotate(var(--shadow-a));
+    /* Un ventanal: paños de luz anchos, parteluces finos y el muro en sombra. */
+    background:
+      linear-gradient(0deg, transparent 0 46%, color-mix(in oklab, var(--brand-ink) 90%, transparent) 46% 47.4%, transparent 47.4%),
+      repeating-linear-gradient(
+        90deg,
+        color-mix(in oklab, var(--brand-ink) 90%, transparent) 0 26vmax,
+        transparent 26vmax 37vmax,
+        color-mix(in oklab, var(--brand-ink) 90%, transparent) 37vmax 38.2vmax,
+        transparent 38.2vmax 49vmax
+      );
+    filter: blur(18px);
+    will-change: transform, opacity;
+  }
+
+  @media (max-width: 40rem) {
+    .light-rig {
+      opacity: calc(var(--shadow-o) * 2.3);
+    }
+  }
+
+  /* De noche el ventanal deja entrar la luz fría de la ciudad, con el mismo ángulo de la sombra. */
+  .light-rig-night {
+    position: fixed;
+    inset: -20vmax;
+    z-index: 2;
+    pointer-events: none;
+    opacity: calc(var(--night) * 0.3);
+    mix-blend-mode: screen;
+    transform: translateX(var(--shadow-x)) rotate(var(--shadow-a));
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 26vmax,
+        var(--shaft) 26vmax 37vmax,
+        transparent 37vmax 38.2vmax,
+        var(--shaft) 38.2vmax 49vmax
+      );
+    filter: blur(28px);
+  }
+
+  .plate {
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(var(--psx) var(--psy) 22px rgb(10 16 32 / 0.3)) drop-shadow(0 3px 4px rgb(10 16 32 / 0.25));
+    will-change: transform;
+  }
+
+  /* Fotografía del festival: queda por encima de la sombra del ventanal (la luz ya viene en la foto). */
+  .photo-frame {
+    position: relative;
+    z-index: 3;
+    display: block;
+    overflow: hidden;
+    background: var(--brand-photo);
+  }
+  .photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-out-expo), filter 0.6s;
+  }
+  .dish:hover .photo {
+    transform: scale(1.04);
+  }
+  .dish:active .photo {
+    transform: scale(1.01);
+  }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .photo-frame .photo {
+        animation: photo-settle linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 45%;
+      }
+      .photo-frame .photo-hero {
+        animation: photo-drift linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 100vh;
+      }
+    }
+  }
+
+  .layer-text {
+    position: relative;
+    z-index: 3;
+  }
+
+  /* ——— Sello de hora ——— */
+  .hour-stamp {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+
+  /* ——— Botones ——— */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3.25rem;
+    padding: 0 1.4rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: transform 0.25s var(--ease-out-quart), background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    user-select: none;
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .btn-book {
+    background: var(--brand-accent-strong, var(--brand-accent));
+    color: var(--brand-on-accent);
+    box-shadow: 0 10px 22px -12px rgb(10 16 32 / 0.55);
+  }
+  html[data-tone="dark"] .btn-book {
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand-paper) 22%, transparent), 0 10px 22px -12px rgb(0 0 0 / 0.6);
+  }
+  .btn-book:hover {
+    background: var(--brand-accent-hover);
+  }
+  .btn-book .arrow {
+    transition: transform 0.35s var(--ease-out-expo);
+  }
+  .btn-book:hover .arrow {
+    transform: translateX(4px);
+  }
+  .btn-ghost {
+    color: var(--ink-on);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ink-on) 35%, transparent);
+  }
+  .btn-ghost:hover {
+    box-shadow: inset 0 0 0 1px var(--ink-on);
+  }
+  .btn[disabled] {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* ——— Barra de reserva fija (celular) ——— */
+  .book-bar {
+    position: fixed;
+    z-index: 40;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--brand-ink) 88%, transparent);
+    backdrop-filter: blur(12px) saturate(1.2);
+    -webkit-backdrop-filter: blur(12px) saturate(1.2);
+    box-shadow: 0 16px 40px -16px rgb(10 16 32 / 0.6);
+    transform: translateY(0);
+    transition: transform 0.5s var(--ease-out-expo), opacity 0.4s;
+  }
+  .book-bar[data-hidden="true"] {
+    transform: translateY(140%);
+    opacity: 0;
+  }
+  .book-bar .btn {
+    min-height: 3rem;
+  }
+  .book-bar .btn-ghost {
+    color: var(--brand-paper);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand-paper) 30%, transparent);
+  }
+  @media (min-width: 64rem) {
+    .book-bar {
+      left: auto;
+      right: 1.5rem;
+      bottom: 1.5rem;
+    }
+  }
+
+  /* ——— Navegación ——— */
+  .site-nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: max(0.9rem, env(safe-area-inset-top)) 1.25rem 0.9rem;
+    color: var(--ink-on);
+    transition: color 0.6s linear;
+  }
+  @media (min-width: 64rem) {
+    .site-nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+    }
+  }
+  .site-nav > a:first-child {
+    white-space: nowrap;
+  }
+  .site-nav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--cloth);
+    opacity: 1;
+    transition: box-shadow 0.3s, background-color 0.6s linear;
+  }
+  .site-nav[data-scrolled="true"]::before {
+    opacity: 1;
+    box-shadow: 0 1px 0 color-mix(in oklab, var(--ink-on) 12%, transparent);
+  }
+  .nav-link {
+    position: relative;
+    padding: 0.4rem 0;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s var(--ease-out-expo);
+  }
+  .nav-link:hover::after,
+  .nav-link[aria-current="page"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .menu-sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    align-content: end;
+    padding: 1.25rem 1.25rem max(1.5rem, env(safe-area-inset-bottom));
+    background: var(--brand-ink);
+    color: var(--brand-paper);
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+    transition: clip-path 0.6s var(--ease-out-expo), visibility 0s 0.6s;
+  }
+  .menu-sheet[data-open="true"] {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+    transition: clip-path 0.6s var(--ease-out-expo), visibility 0s;
+  }
+  .menu-sheet a {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.4s, transform 0.5s var(--ease-out-expo);
+  }
+  .menu-sheet[data-open="true"] a {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ——— Revelado de texto ——— */
+  .reveal {
+    transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo), filter 0.9s var(--ease-out-expo);
+  }
+  .js .reveal:not(.is-in) {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+
+  /* ——— Fichas de categoría ——— */
+  .chips {
+    position: relative;
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0.3rem;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--ink-on) 7%, transparent);
+  }
+  .chips::-webkit-scrollbar {
+    display: none;
+  }
+  .chip {
+    position: relative;
+    z-index: 1;
+    flex: none;
+    min-height: 2.6rem;
+    padding: 0 1rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    color: var(--ink-on);
+    transition: color 0.35s;
+  }
+  .chip[aria-selected="true"] {
+    color: var(--brand-paper);
+  }
+  .chip-indicator {
+    position: absolute;
+    z-index: 0;
+    top: 0.3rem;
+    bottom: 0.3rem;
+    border-radius: 999px;
+    background: var(--brand-ink);
+    transition: transform 0.5s var(--ease-out-expo);
+  }
+
+  /* ——— Tarjetas de plato ——— */
+  .dish {
+    position: relative;
+    display: grid;
+    gap: 0.9rem;
+    text-align: left;
+    cursor: pointer;
+  }
+  .dish-media {
+    position: relative;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+  }
+  .dish-media img {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+    transition: transform 0.9s var(--ease-out-expo);
+  }
+  .dish:hover .dish-media img {
+    transform: rotate(14deg) scale(1.03);
+  }
+  .dish-media .no-photo {
+    width: 78%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    padding: 12%;
+    text-align: center;
+    background: color-mix(in oklab, var(--ink-on) 6%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ink-on) 18%, transparent);
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    line-height: 1.1;
+    transition: transform 0.9s var(--ease-out-expo);
+  }
+  .dish:hover .no-photo {
+    transform: rotate(-6deg);
+  }
+
+  /* ——— Hoja inferior del plato ——— */
+  .sheet {
+    margin: auto auto 0;
+    width: 100%;
+    max-width: 40rem;
+    max-height: 92dvh;
+    border: 0;
+    padding: 0;
+    border-radius: 1.75rem 1.75rem 0 0;
+    background: var(--brand-paper);
+    color: var(--brand-ink);
+    overflow: auto;
+    transform: translateY(100%);
+    transition: transform 0.55s var(--ease-out-expo), overlay 0.55s allow-discrete, display 0.55s allow-discrete;
+  }
+  .sheet[open] {
+    transform: none;
+  }
+  @starting-style {
+    .sheet[open] {
+      transform: translateY(100%);
+    }
+  }
+  .sheet::backdrop {
+    background: rgb(10 16 32 / 0);
+    transition: background-color 0.4s, overlay 0.4s allow-discrete, display 0.4s allow-discrete;
+  }
+  .sheet[open]::backdrop {
+    background: rgb(10 16 32 / 0.55);
+  }
+  @starting-style {
+    .sheet[open]::backdrop {
+      background: rgb(10 16 32 / 0);
+    }
+  }
+  @media (min-width: 48rem) {
+    .sheet {
+      margin: auto;
+      border-radius: 1.75rem;
+      transform: translateY(24px) scale(0.98);
+      opacity: 0;
+      transition: transform 0.5s var(--ease-out-expo), opacity 0.3s, overlay 0.5s allow-discrete, display 0.5s allow-discrete;
+    }
+    .sheet[open] {
+      transform: none;
+      opacity: 1;
+    }
+    @starting-style {
+      .sheet[open] {
+        transform: translateY(24px) scale(0.98);
+        opacity: 0;
+      }
+    }
+  }
+
+  /* ——— Formularios ——— */
+  .field {
+    display: grid;
+    gap: 0.45rem;
+  }
+  .field label,
+  .field legend {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .input {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.9rem;
+    background: color-mix(in oklab, #ffffff 70%, var(--cloth));
+    color: var(--brand-ink);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand-ink) 22%, transparent);
+    transition: box-shadow 0.25s;
+    font-size: 1rem;
+  }
+  html[data-tone="dark"] .input {
+    background: color-mix(in oklab, var(--brand-paper) 7%, transparent);
+    color: var(--brand-paper);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand-paper) 32%, transparent);
+  }
+  html[data-tone="dark"] .input::placeholder {
+    color: var(--brand-placeholder-dark);
+  }
+  html[data-tone="dark"] .input:focus {
+    box-shadow: inset 0 0 0 2px var(--brand-paper);
+  }
+  .on-card .input,
+  html[data-tone="dark"] .on-card .input {
+    background: #ffffff;
+    color: var(--brand-ink);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand-ink) 22%, transparent);
+  }
+  html[data-tone="dark"] .on-card .input:focus {
+    box-shadow: inset 0 0 0 2px var(--brand-primary);
+  }
+  .input::placeholder {
+    color: var(--brand-placeholder);
+  }
+  .input:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 2px var(--brand-primary);
+  }
+  .input[aria-invalid="true"] {
+    box-shadow: inset 0 0 0 2px var(--brand-accent);
+  }
+  textarea.input {
+    min-height: 6rem;
+    resize: vertical;
+  }
+  .field-error {
+    font-size: 0.875rem;
+    color: var(--brand-error, var(--brand-accent-strong, var(--brand-accent)));
+  }
+
+  /* Escala 1 a 5: segmentos */
+  .scale {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.4rem;
+  }
+  .scale input,
+  .yesno input,
+  .slot input,
+  .day input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .scale label,
+  .yesno label {
+    display: grid;
+    place-items: center;
+    min-height: 3rem;
+    border-radius: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand-ink) 22%, transparent);
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, transform 0.3s var(--ease-out-expo), box-shadow 0.25s;
+  }
+  .scale label:active,
+  .yesno label:active {
+    transform: scale(0.94);
+  }
+  .scale input:checked + label,
+  .yesno input:checked + label {
+    background: var(--brand-ink);
+    color: var(--brand-paper);
+    box-shadow: none;
+  }
+  .scale input:focus-visible + label,
+  .yesno input:focus-visible + label,
+  .slot input:focus-visible + span,
+  .day input:focus-visible + span {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+  }
+  .yesno {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .check {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.95rem;
+  }
+  .check input {
+    flex: none;
+    width: 1.35rem;
+    height: 1.35rem;
+    margin-top: 0.1rem;
+    accent-color: var(--brand-ink);
+  }
+
+  /* ——— Reserva: días, horas, personas ——— */
+  .days {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0.25rem 0.1rem 0.5rem;
+  }
+  .days::-webkit-scrollbar {
+    display: none;
+  }
+  .day {
+    position: relative;
+    flex: none;
+    scroll-snap-align: start;
+  }
+  .day > span {
+    display: grid;
+    place-items: center;
+    width: 4.25rem;
+    height: 5rem;
+    border-radius: 1.1rem;
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ink-on) 25%, transparent);
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, transform 0.3s var(--ease-out-expo);
+  }
+  .day > span:active {
+    transform: scale(0.95);
+  }
+  .day input:checked + span {
+    background: var(--ink-on);
+    color: var(--cloth);
+    box-shadow: none;
+  }
+  .slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    gap: 0.5rem;
+  }
+  .slot {
+    position: relative;
+  }
+  .slot span {
+    display: grid;
+    place-items: center;
+    min-height: 3rem;
+    border-radius: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ink-on) 25%, transparent);
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, transform 0.3s var(--ease-out-expo);
+  }
+  .slot span:active {
+    transform: scale(0.95);
+  }
+  .slot input:checked + span {
+    background: var(--ink-on);
+    color: var(--cloth);
+    box-shadow: none;
+  }
+
+  .stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .stepper button {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ink-on) 35%, transparent);
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.2s;
+  }
+  .stepper button:active {
+    transform: scale(0.9);
+  }
+  .stepper button[disabled] {
+    opacity: 0.3;
+  }
+  .count {
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 22vw, 7rem);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .count.bump {
+    animation: bump 0.45s var(--ease-out-expo);
+  }
+
+  /* Progreso de estaciones */
+  .stations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+  .stations li {
+    height: 3px;
+    border-radius: 3px;
+    background: color-mix(in oklab, var(--ink-on) 18%, transparent);
+    overflow: hidden;
+  }
+  .stations li::after {
+    content: "";
+    display: block;
+    height: 100%;
+    background: var(--ink-on);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s var(--ease-out-expo);
+  }
+  .stations li[data-done="true"]::after {
+    transform: scaleX(1);
+  }
+
+  .step {
+    animation: stepIn 0.6s var(--ease-out-expo);
+  }
+  .step[hidden] {
+    display: none;
+  }
+
+  /* Tira de platos con scroll horizontal */
+  .strip {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(72vw, 22rem);
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-inline: 1.25rem;
+    scroll-padding-inline: 1.25rem;
+  }
+  .strip::-webkit-scrollbar {
+    display: none;
+  }
+  .strip > * {
+    scroll-snap-align: start;
+  }
+  @media (min-width: 64rem) {
+    .strip {
+      padding-inline: max(2.5rem, calc((100vw - 80rem) / 2 + 2.5rem));
+      scroll-padding-inline: max(2.5rem, calc((100vw - 80rem) / 2 + 2.5rem));
+    }
+  }
+
+  /* Vista previa de la confirmación por WhatsApp (simulada). Colores del propio WhatsApp para que se reconozca. */
+  .wa-chat {
+    overflow: hidden;
+    border-radius: 1.25rem;
+    background: #efeae2;
+    color: #111b21;
+    box-shadow: 0 18px 40px -24px rgb(10 16 32 / 0.6);
+  }
+  .wa-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1rem;
+    background: #075e54;
+    color: #ffffff;
+  }
+  .wa-head img {
+    padding: 0.35rem;
+    border-radius: 999px;
+    background: #ffffff;
+    height: 2rem;
+    width: 2rem;
+    object-fit: contain;
+  }
+  .wa-body {
+    display: grid;
+    gap: 0.6rem;
+    padding: 1rem;
+  }
+  .wa-msg {
+    justify-self: start;
+    max-width: 88%;
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.2rem 0.9rem 0.9rem 0.9rem;
+    background: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 0.08);
+    animation: stepIn 0.5s var(--ease-out-expo) both;
+  }
+  .wa-day + .wa-msg {
+    animation-delay: 0.5s;
+  }
+  .wa-out {
+    justify-self: end;
+    border-radius: 0.9rem 0.2rem 0.9rem 0.9rem;
+    background: #d9fdd3;
+  }
+  .wa-day {
+    justify-self: center;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    font-size: 0.75rem;
+    color: #54656f;
+  }
+  .wa-replies {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin: 0.6rem -0.75rem -0.55rem;
+    border-top: 1px solid #e9edef;
+  }
+  .wa-replies button {
+    min-height: 2.75rem;
+    color: #00669c;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  .wa-replies button:hover {
+    background: #f5f6f6;
+  }
+  .wa-replies button[disabled] {
+    opacity: 0.5;
+  }
+
+  /* Etiquetas (momentos) y botones de distribución */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    padding: 0 0.9rem;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ink-on) 28%, transparent);
+  }
+  .tag-btn {
+    min-height: 2.75rem;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, transform 0.3s var(--ease-out-expo);
+  }
+  .tag-btn:active {
+    transform: scale(0.96);
+  }
+  .tag-btn[aria-checked="true"] {
+    background: var(--ink-on);
+    color: var(--cloth);
+    box-shadow: none;
+  }
+
+  /* Galería deslizable de cada espacio */
+  .gallery {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 88%;
+    gap: 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .gallery > * {
+    scroll-snap-align: start;
+  }
+  @media (min-width: 64rem) {
+    .gallery {
+      grid-auto-flow: row;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-columns: auto;
+      overflow: visible;
+    }
+    .gallery > :first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* Capacidad en escala 0–500 */
+  .capacity {
+    position: relative;
+    height: 6px;
+    border-radius: 6px;
+    background: color-mix(in oklab, var(--ink-on) 16%, transparent);
+  }
+  .capacity span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 6px;
+    background: var(--ink-on);
+  }
+
+  /* Plano de montaje: va en papel claro para que el trazo del cliente se lea */
+  .plan {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem 1rem 0.9rem;
+    border-radius: 1.25rem;
+    background: var(--brand-paper);
+    color: var(--brand-ink);
+  }
+  .plan img {
+    width: 100%;
+    max-height: 22rem;
+    object-fit: contain;
+    animation: stepIn 0.5s var(--ease-out-expo);
+  }
+
+  /* Contacto */
+  .open-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: color-mix(in oklab, var(--ink-on) 40%, transparent);
+  }
+  [data-open-now][data-state="open"] {
+    font-weight: 500;
+  }
+  .open-dot:has(+ [data-state="open"]) {
+    background: var(--brand-olive);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand-olive) 25%, transparent);
+  }
+  .hours > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid color-mix(in oklab, var(--ink-on) 16%, transparent);
+  }
+  .hours dd {
+    white-space: nowrap;
+  }
+  .hours > div[aria-current="date"] dt::after {
+    content: " · hoy";
+    color: var(--muted-on);
+  }
+  .map-frame {
+    overflow: hidden;
+    border-radius: 1.25rem;
+    aspect-ratio: 16 / 10;
+    background: var(--brand-photo);
+  }
+  @media (max-width: 40rem) {
+    .map-frame {
+      aspect-ratio: 4 / 5;
+    }
+  }
+  .map-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(0.35) contrast(1.05);
+  }
+
+  .price {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .wine {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    gap: 1.5rem;
+  }
+  .wine dt {
+    color: var(--muted-on);
+    font-size: 0.85rem;
+  }
+  .wine dd {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rule {
+    height: 1px;
+    background: color-mix(in oklab, var(--ink-on) 22%, transparent);
+  }
+
+  .muted {
+    color: var(--muted-on);
+  }
+
+  .logo-light {
+    display: none;
+  }
+  html[data-tone="dark"] .logo-dark {
+    display: none;
+  }
+  html[data-tone="dark"] .logo-light {
+    display: block;
+  }
+}
+
+/*
+  Lenguaje editorial del tablero "Fragata" (Pinterest): oscuro y cálido, luz dura de ventanal, carta tipográfica,
+  índice numerado y grabados de línea.
+*/
+@layer components {
+  .idx {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted-on);
+  }
+  .idx::before {
+    content: "";
+    width: 2.25rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+  }
+
+  /* Marcas de corte dentro de la foto */
+  .crop-in::after {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+    z-index: 1;
+    pointer-events: none;
+    --c: rgb(255 255 255 / 0.8);
+    background:
+      linear-gradient(var(--c), var(--c)) left top / 18px 1px no-repeat,
+      linear-gradient(var(--c), var(--c)) left top / 1px 18px no-repeat,
+      linear-gradient(var(--c), var(--c)) right top / 18px 1px no-repeat,
+      linear-gradient(var(--c), var(--c)) right top / 1px 18px no-repeat,
+      linear-gradient(var(--c), var(--c)) left bottom / 18px 1px no-repeat,
+      linear-gradient(var(--c), var(--c)) left bottom / 1px 18px no-repeat,
+      linear-gradient(var(--c), var(--c)) right bottom / 18px 1px no-repeat,
+      linear-gradient(var(--c), var(--c)) right bottom / 1px 18px no-repeat;
+  }
+  .photo-cap {
+    position: absolute;
+    inset: auto 2rem 2rem 2rem;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.25rem 1.25rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+    color: #eef1f5;
+    text-shadow: 0 1px 10px rgb(0 0 0 / 0.65);
+  }
+
+  /* Grabados de línea (sprite en assets/img/giratorio/grabados.svg) */
+  .engrave,
+  .engrave-row svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .engrave {
+    opacity: 0.55;
+  }
+  .engrave-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 2.25rem;
+    color: var(--ink-on);
+    opacity: 0.55;
+  }
+  .engrave-row svg {
+    height: 3.75rem;
+    width: auto;
+    aspect-ratio: auto;
+  }
+
+  /* Carta editorial: categoría en mayúsculas grandes, platos como renglones con puntos guía */
+  .carta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 11vw, 4.4rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  .carta-item {
+    display: block;
+    width: 100%;
+    padding: 1.15rem 0;
+    text-align: left;
+    border-top: 1px solid color-mix(in oklab, var(--ink-on) 22%, transparent);
+  }
+  .carta-item > .layer-text {
+    transition: transform 0.4s var(--ease-out-quart);
+  }
+  .carta-item:last-child {
+    border-bottom: 1px solid color-mix(in oklab, var(--ink-on) 22%, transparent);
+  }
+  .carta-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .carta-row .leader {
+    flex: 1;
+    min-width: 1.5rem;
+    transform: translateY(-0.2em);
+    border-bottom: 1px dotted color-mix(in oklab, var(--ink-on) 45%, transparent);
+  }
+  @media (hover: hover) {
+    .carta-item:hover,
+    .carta-item:focus-visible,
+    .carta-item[data-on="true"] > .layer-text {
+      transform: translateX(0.75rem);
+    }
+  }
+  .carta-preview {
+    position: sticky;
+    top: 6.5rem;
+  }
+  .carta-preview .photo-frame {
+    aspect-ratio: 1;
+  }
+  .carta-preview img {
+    transition: opacity 0.35s;
+  }
+
+  /* Retícula de seis columnas, muy tenue, detrás del contenido */
+  .grid-ruled::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--ink-on) 9%, transparent) 0 1px,
+      transparent 1px calc(100% / 6)
+    );
+    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  }
+}
+
+
+@keyframes photo-settle {
+  from {
+    transform: scale(1.12);
+    filter: brightness(0.7);
+  }
+  to {
+    transform: scale(1);
+    filter: none;
+  }
+}
+
+@keyframes photo-drift {
+  to {
+    transform: scale(1.08) translateY(3%);
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes stepIn {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+@keyframes bump {
+  30% {
+    transform: translateY(-6px) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js .reveal:not(.is-in) {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  .light-rig {
+    will-change: auto;
+  }
+  @view-transition {
+    navigation: none;
+  }
+}

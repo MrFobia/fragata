@@ -1,0 +1,129 @@
+{
+  "title": "Dirección visual — Fish Market",
+  "question": "La tirada asignó «Cartel chicha del festival». Quédate con ella, toma una alternativa o vuelve a tirar.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Cartel chicha del festival",
+      "kicker": "THE ROLL",
+      "lineage": "Carteles chicha de Lima (Monky, Elliot Túpac): así se anuncian los festivales en Perú, tierra del chef Accinelli",
+      "thesis": "El festival se anuncia como en Lima: carteles pegados uno sobre otro, letras apiladas con degradé, y entre cartel y cartel la noche con flash de la mesa compartida.",
+      "palette": ["#223a84", "#da5f27", "#e9e2d1", "#8fa454", "#427ba2"],
+      "materials": ["cartel serigrafiado pegado al muro", "letras apiladas con degradé de dos tintas", "fotos de plato con flash directo", "rótulo a mano en Beth Ellen"],
+      "viewport": "Azul Fish Market a sangre. Un cartel ocupa la pantalla: CEVICHES / SUSHIS / BAOS apilados en naranja→crema, «octubre y noviembre · chef Carlos Accinelli» en franja verde, un plato con flash recortado encima. Reservar fijo abajo.",
+      "risk": "Si las letras se hacen tímidas o se usa en todo, queda como afiche de verbena y no como «by La Fragata».",
+      "raised": [
+        {"from": "challenger-seedbed", "raise": "Un color manda: el azul #223a84 es el piso de toda la página, no el crema."},
+        {"from": "challenger-orizuru", "raise": "Todo va numerado en una columna fija: 30 platos del 01 al 30 y la reserva en pasos 1·2·3."},
+        {"from": "challenger-jackfield", "raise": "Ningún estado depende solo del color: lo elegido lleva sello y marca, no solo naranja."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Rollo de flash",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "El tablero Pinterest del cliente: flash directo, manos con palillos, grano de película",
+      "thesis": "El sitio es un rollo de una noche en Fish Market: cada plato es un disparo con flash, con fecha naranja de cámara desechable.",
+      "palette": ["#0f1630", "#da5f27", "#e9e2d1", "#223a84"],
+      "materials": ["flash directo", "grano de película", "viñeta de foco", "fechador naranja"],
+      "viewport": "Foto con flash de manos tomando un nami de la mesa, a sangre, con «10 '26» naranja abajo a la derecha y el titular encima.",
+      "risk": "Es la foto de hospitalidad que muchos restaurantes ya usan: familiar, y depende de fotos que aún no existen."
+    },
+    {
+      "id": "challenger-lonja",
+      "label": "Pizarra de la lonja",
+      "verdict": "competitive",
+      "lineage": "Tablero de salidas split-flap, leído como pizarra de precios del mercado de pescado",
+      "thesis": "El menú es el tablero del mercado: 30 platos en filas cuyas fichas voltean al cambiar de categoría.",
+      "palette": ["#101a3a", "#e9e2d1", "#da5f27"],
+      "materials": ["fichas que voltean", "filas y columnas fijas"],
+      "viewport": "Tablero a pantalla completa: plato, categoría, precio, con la fila del día volteando.",
+      "case": "Gana en claridad del menú; un comensal de noche no se reconoce en un tablero de estación.",
+      "risk": "Frío y técnico para una cena con amigos.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-split-flap-concourse-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-split-flap-concourse.webp"
+    },
+    {
+      "id": "challenger-neon",
+      "label": "Neón del bar",
+      "verdict": "competitive",
+      "lineage": "Letrero de neón doblado a mano",
+      "thesis": "«Muchas formas de probar el mar» escrito en un solo trazo de neón que se enciende al llegar.",
+      "palette": ["#0b1228", "#427ba2", "#da5f27"],
+      "materials": ["tubo de vidrio", "brillo de gas"],
+      "viewport": "Sala oscura; el lema en neón azul se enciende letra por letra sobre la barra.",
+      "case": "El público nocturno se reconoce; los platos quedan en segundo plano.",
+      "risk": "Cliché de bar si el neón no es el único gesto.",
+      "hero": "https://impeccable.style/worlds/cards/magnetism-electricity-plasma-hand-bent-neon-circuit-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/magnetism-electricity-plasma-hand-bent-neon-circuit.webp"
+    },
+    {
+      "id": "challenger-loteria",
+      "label": "Lotería del mar",
+      "verdict": "competitive",
+      "lineage": "Cartas de lotería numeradas en color plano",
+      "thesis": "Los 30 platos son 30 cartas numeradas; «¿Ya probaste?» marca tu tabla con fríjoles.",
+      "palette": ["#223a84", "#da5f27", "#8fa454", "#e9e2d1"],
+      "materials": ["cartas de color plano", "contorno negro"],
+      "viewport": "La carta cantada del día (El Costero, n.º 03) grande, con la tabla debajo.",
+      "case": "El menú se vuelve juego y es muy claro; la lotería es mexicana, no limeña ni bogotana.",
+      "risk": "Puede leerse infantil frente a «by La Fragata».",
+      "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-loteria-tabla-night-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/vernacular-ephemera-loteria-tabla-night.webp"
+    },
+    {
+      "id": "challenger-seedbed",
+      "label": "Prado de cápsulas",
+      "verdict": "declined",
+      "lineage": "Landing SaaS de color único con cápsulas flotantes",
+      "thesis": "Un solo color a sangre con la interfaz flotando en píldoras.",
+      "palette": ["#82cc5c", "#f2efe3", "#2f3130"],
+      "materials": ["cápsulas blancas", "paneles redondeados"],
+      "viewport": "Campo verde con titular y barra en cápsula.",
+      "case": "Se lee como software, no como restaurante.",
+      "kept": "Un color manda la pantalla entera.",
+      "risk": "Fuera de categoría.",
+      "hero": "https://impeccable.style/worlds/cards/sd-seedbed-lobes-hero.webp"
+    },
+    {
+      "id": "challenger-orizuru",
+      "label": "Grulla de papel",
+      "verdict": "declined",
+      "lineage": "Secuencia de plegado de origami",
+      "thesis": "La reserva como 32 pliegues numerados.",
+      "palette": ["#c8321e", "#f4efe6", "#1a1a1a"],
+      "materials": ["washi", "pliegues"],
+      "viewport": "Una hoja que se pliega con el scroll.",
+      "case": "Bello pero ajeno al mar y a la noche.",
+      "kept": "Numeración estricta en una columna de margen.",
+      "risk": "Fuera de categoría.",
+      "hero": "https://impeccable.style/worlds/cards/paper-folds-pleats-deployable-orizuru-crane-sequence-hero.webp"
+    },
+    {
+      "id": "challenger-jackfield",
+      "label": "Panel de conexiones",
+      "verdict": "declined",
+      "lineage": "Patchbay de estudio en vidrio negro",
+      "thesis": "Cada opción atada a su valor por una línea ámbar.",
+      "palette": ["#0a0a0a", "#ffb000"],
+      "materials": ["vidrio negro", "líneas ámbar"],
+      "viewport": "Carriles numerados con líneas de estado.",
+      "case": "Herramienta de operador; nadie reserva una mesa así.",
+      "kept": "El estado se dibuja con la forma, no solo con el color.",
+      "risk": "Fuera de categoría.",
+      "hero": "https://impeccable.style/worlds/cards/operate-b-normalled-jackfield-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code", "toggle": false},
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "Restaurante de mar casual: foto a sangre, logo, menú en retícula y botón de reservar.",
+    "palette": ["#ffffff", "#223a84", "#da5f27"],
+    "materials": ["fotografía a sangre", "retícula de tarjetas"],
+    "viewport": "Foto del plato o del salón a pantalla completa con logo y Reservar.",
+    "risk": "Igual a la competencia, por diseño."
+  },
+  "steer": true
+}

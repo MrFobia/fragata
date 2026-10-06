@@ -1,0 +1,123 @@
+{
+  "title": "Dirección visual — La Fragata Giratorio",
+  "question": "La tirada asignó «La luz que gira». Quédate con ella, toma una alternativa o vuelve a tirar.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "La luz que gira",
+      "kicker": "THE ROLL",
+      "lineage": "La luz de ventana dura del tablero de Pinterest, más el giro del salón",
+      "thesis": "El sitio se recorre como un servicio de 12 m a 10 p. m.: la luz cruza la mesa y cambia de hora mientras bajas.",
+      "palette": ["#17213a", "#223a84", "#506c9b", "#646637", "#51122b"],
+      "materials": ["sombras de ventanal sobre mantel", "platos vistos desde arriba, recortados con su borde real", "Sorento a gran escala"],
+      "viewport": "Un plato del festival visto desde arriba a 70vh, con la sombra de un ventanal que gira lento sobre él. Sorento grande: «Un viaje a la alta cocina». Sello de hora 12:40 y botón Reservar fijo abajo en celular.",
+      "risk": "Si la sombra se vuelve un adorno y no se ata a la hora, queda como cualquier restaurante oscuro.",
+      "raised": [
+        {"from": "challenger-daylight", "raise": "La hora es el dato que manda: cada sección lleva su hora (12:40 almuerzo, 18:10 atardecer, 21:30 noche) y el selector de hora de la reserva cambia la luz de la escena."},
+        {"from": "challenger-raku", "raise": "El vino #51122b queda reservado para una sola cosa activa: la acción de reservar."},
+        {"from": "challenger-darkroom", "raise": "La reserva va por estaciones que no se saltan, y antes de confirmar muestra un resumen de toda la reserva."},
+        {"from": "challenger-tropicalia", "raise": "Contraste de escala sin miedo: el plato recortado llega a 3 veces el tamaño del titular."},
+        {"from": "challenger-riso", "raise": "Solo las cinco tintas de la marca, sin grises inventados: los textos secundarios se tiñen del azul."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Bitácora de la Fragata",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Cartas náuticas y bitácoras de navegación; la pesquera de Buenaventura de 1964",
+      "thesis": "La vista de 360° contada como rumbos: cada plato y cada cerro tiene su grado en la rosa náutica.",
+      "palette": ["#17213a", "#223a84", "#506c9b", "#646637"],
+      "materials": ["líneas de carta náutica", "rosa de los vientos", "tinta de bitácora"],
+      "viewport": "Una rosa náutica enorme con el plato en el centro y los rumbos de Bogotá alrededor (Monserrate, cerros, Calle 100).",
+      "risk": "Es lo que más corridas harían con «Fragata»: lo náutico es la lectura obvia del nombre."
+    },
+    {
+      "id": "challenger-swiss",
+      "label": "Retícula de cartel suizo",
+      "verdict": "competitive",
+      "lineage": "Carteles de concierto del Estilo Tipográfico Internacional",
+      "thesis": "Una retícula maestra ordena los 17 platos como una serie de carteles.",
+      "palette": ["#f4f4f2", "#17213a", "#223a84"],
+      "materials": ["retícula modular a la vista", "arcos y barras geométricas"],
+      "viewport": "Titular de festival alineado a la retícula, con los platos como fragmentos fotográficos en módulos.",
+      "case": "Gana en claridad del menú, pero un comensal de alta cocina no se reconoce en un cartel suizo.",
+      "risk": "Frío para una cena de celebración."
+    },
+    {
+      "id": "challenger-daylight",
+      "label": "Sección con luz de día",
+      "verdict": "competitive",
+      "lineage": "Cortes arquitectónicos con trayectorias solares",
+      "thesis": "El piso 12 del WTC dibujado en corte, con el sol recorriendo las mesas.",
+      "palette": ["#eef0f2", "#17213a", "#d9a441", "#506c9b"],
+      "materials": ["poché en carbón", "letra de arquitecto", "sellos de hora"],
+      "viewport": "El corte del restaurante a lo ancho de la pantalla, con el rayo de sol sobre una mesa.",
+      "case": "Comparte la idea de la hora; el corte técnico se come el plato, que es lo que vende el festival.",
+      "risk": "Parece un estudio de arquitectura, no una cena."
+    },
+    {
+      "id": "challenger-riso",
+      "label": "Sistema risográfico",
+      "verdict": "declined",
+      "lineage": "Impresión Riso",
+      "palette": ["#f2ede4", "#ff48b0", "#0078bf"],
+      "materials": ["grano", "tintas desregistradas"],
+      "thesis": "Tintas de Riso fluorescentes y desregistradas.",
+      "viewport": "Formas de papel recortado en dos tintas.",
+      "risk": "Tono de fanzine, no de alta cocina.",
+      "case": "Pierde en los dos ejes contra la alta cocina.",
+      "kept": "Disciplina de tintas limitadas."
+    },
+    {
+      "id": "challenger-darkroom",
+      "label": "Cuarto oscuro",
+      "verdict": "declined",
+      "lineage": "Laboratorio de copias con luz de seguridad",
+      "palette": ["#c7561e", "#1a1a1a", "#e8e4dc"],
+      "materials": ["luz ámbar", "tiras de prueba"],
+      "thesis": "Imágenes que se revelan por estaciones.",
+      "viewport": "Un plato apareciendo en la cubeta de revelado.",
+      "risk": "Ámbar total fuera de la marca.",
+      "case": "Pierde en los dos ejes.",
+      "kept": "Estaciones irreversibles con vista previa antes de confirmar."
+    },
+    {
+      "id": "challenger-tropicalia",
+      "label": "Collage tropicália",
+      "verdict": "declined",
+      "lineage": "Portadas de disco brasileñas",
+      "palette": ["#2f8f3a", "#ffb000", "#e0442c"],
+      "materials": ["recortes con tijera", "poesía concreta"],
+      "thesis": "Recortes a escalas absurdas en una selva pintada.",
+      "viewport": "Platos pegados entre hojas.",
+      "risk": "Encaja con Fish Market, no con Giratorio.",
+      "case": "Pierde en los dos ejes para Giratorio.",
+      "kept": "Contraste de escala sin miedo."
+    },
+    {
+      "id": "challenger-raku",
+      "label": "Raku y humo",
+      "verdict": "declined",
+      "lineage": "Cerámica raku",
+      "palette": ["#141414", "#d8d8d2", "#e5641e"],
+      "materials": ["arcilla carbonizada", "esmalte craquelado"],
+      "thesis": "Piel negra y plata de la cocción.",
+      "viewport": "Un cuenco brillando entre humo.",
+      "risk": "Proceso de cocción ajeno al comensal.",
+      "case": "Pierde en los dos ejes.",
+      "kept": "Un solo color encendido para lo activo."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code", "toggle": false},
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "Restaurante de alta cocina: foto a sangre, serif elegante y botón de reservar.",
+    "palette": ["#0f1420", "#f5f1ea", "#223a84"],
+    "materials": ["fotografía a sangre", "retícula limpia"],
+    "viewport": "Video o foto del salón a pantalla completa, con logo, menú y Reservar.",
+    "risk": "Igual a la competencia, por diseño."
+  },
+  "steer": true
+}
