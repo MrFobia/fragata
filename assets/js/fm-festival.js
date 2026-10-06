@@ -51,7 +51,7 @@ document.querySelector("[data-extras]").innerHTML = `
     <div class="relative z-[3]">
       <h3 class="stack stack-ink" data-fit data-fit-max="64"><span class="!text-[#14224f]">Adiciones</span></h3>
       <ul class="mt-5 grid gap-4 sm:grid-cols-2" role="list">${data.adiciones
-        .map((a) => `<li class="flex items-baseline justify-between gap-4 border-t-2 border-[#14224f]/25 pt-3"><span><span class="block font-[Figtree] text-[1.2rem] font-extrabold">${a.nombre}</span><span class="text-[0.95rem]">${a.desc}</span></span><span class="font-[Figtree] font-extrabold">${cop(a.precio)}</span></li>`)
+        .map((a) => `<li class="flex items-baseline justify-between gap-4 border-t-2 border-[#14224f]/25 pt-3"><span><span class="block font-[Filson_Pro] text-[1.2rem] font-extrabold">${a.nombre}</span><span class="text-[0.95rem]">${a.desc}</span></span><span class="font-[Filson_Pro] font-extrabold">${cop(a.precio)}</span></li>`)
         .join("")}</ul>
     </div>
   </div>`;

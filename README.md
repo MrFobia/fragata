@@ -75,6 +75,6 @@ Dirección «Cartel chicha del festival» (impeccable, seed 02a88d33, elegida en
 - [ ] Dirección Fish Market: confirmar 77-1 (banner) vs 77-19 (eventos)
 - [ ] Fotos de baos, namis, makis, tatakis y tartares de Fish Market
 - [ ] WhatsApp e Instagram propios de Fish Market
-- [ ] Archivos de fuentes: Sorento, Pulshkin High, Filson Pro
+- [x] Archivos de fuentes: Sorento, Pushkin, Filson Pro (assets/fonts, woff2)
 - [ ] Precios del festival verificados (la extracción del PDF los desordena; hoy van en `null`)
 - [ ] HTML de eventos: la carpeta de Drive no lista archivos desde el conector, bajarlo a mano

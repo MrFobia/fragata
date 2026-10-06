@@ -95,7 +95,7 @@ strip.innerHTML =
   `<li class="paste"><a href="festival.html" class="poster poster-orange flex h-full min-h-[24rem] flex-col justify-between p-6" style="--tilt:1.4deg">
     <span class="relative z-[3] hand text-[1.5rem] leading-none">y muchas formas más</span>
     <span class="relative z-[3] stack stack-ink" data-fit><span class="!text-white">+${platos.length - conFoto.length}</span><span class="!text-[#14224f]">platos</span></span>
-    <span class="relative z-[3] font-[Figtree] text-[0.9rem] font-extrabold uppercase tracking-[0.08em]">Baos, namis y makis →</span>
+    <span class="relative z-[3] font-[Filson_Pro] text-[0.9rem] font-extrabold uppercase tracking-[0.08em]">Baos, namis y makis →</span>
   </a></li>`;
 fitStacks(strip);
 watchPaste(strip);

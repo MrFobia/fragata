@@ -40,7 +40,7 @@ const [min, max] = sp.capacidad;
 $("[data-space-facts]").innerHTML = `
   <div class="poster poster-green poster-strip px-5 py-4" style="--tilt:-1deg"><div class="relative z-[3]">
     <dt class="text-[0.8rem] font-bold uppercase tracking-[0.14em]">Capacidad</dt>
-    <dd class="num mt-1 text-[3.2rem] leading-none">${min} – ${max}<span class="ml-2 font-[Figtree] text-[1rem] font-extrabold uppercase tracking-[0.06em]">personas</span></dd>
+    <dd class="num mt-1 text-[3.2rem] leading-none">${min} – ${max}<span class="ml-2 font-[Filson_Pro] text-[1rem] font-extrabold uppercase tracking-[0.06em]">personas</span></dd>
   </div></div>
   <div class="grid grid-cols-[7rem_1fr] gap-4 border-t-2 border-[#e9e2d1]/20 pt-4"><dt class="muted font-semibold">Dirección</dt><dd>${esc(sp.direccion)}, Bogotá</dd></div>
   <div class="grid grid-cols-[7rem_1fr] gap-4 border-t-2 border-[#e9e2d1]/20 pt-4"><dt class="muted font-semibold">Horario</dt><dd>${esc(sp.horario)}</dd></div>
@@ -104,7 +104,7 @@ $("[data-experiencias]").innerHTML = `
     </div>
   </article>
   <ul class="grid gap-3 sm:grid-cols-3" role="list">${resto
-    .map((e, i) => `<li class="poster poster-paper paste px-4 py-5" style="--tilt:${[0.8, -0.6, 1][i]}deg; --d:${(i + 1) * 90}ms"><span class="relative z-[3] block font-[Figtree] text-[1.15rem] font-extrabold leading-tight">${esc(e.nombre)}</span></li>`)
+    .map((e, i) => `<li class="poster poster-paper paste px-4 py-5" style="--tilt:${[0.8, -0.6, 1][i]}deg; --d:${(i + 1) * 90}ms"><span class="relative z-[3] block font-[Filson_Pro] text-[1.15rem] font-extrabold leading-tight">${esc(e.nombre)}</span></li>`)
     .join("")}</ul>`;
 
 // ——— Calendario ———
@@ -113,7 +113,7 @@ $("[data-calendario]").innerHTML = data.calendario
     (c) => `<li class="ticket paste px-6 py-5" style="--tilt:1.2deg">
       <div class="flex items-baseline gap-4">
         <span class="num text-[3.4rem] leading-none text-[#a33f17]">${new Date(c.fecha + "T12:00").getDate()}</span>
-        <span><span class="block font-[Figtree] text-[1.25rem] font-extrabold">${esc(c.nombre)}</span><span class="text-[0.92rem] text-[#344d82]">${esc(c.dia)} · ${esc(c.desc)}</span></span>
+        <span><span class="block font-[Filson_Pro] text-[1.25rem] font-extrabold">${esc(c.nombre)}</span><span class="text-[0.92rem] text-[#344d82]">${esc(c.dia)} · ${esc(c.desc)}</span></span>
       </div>
       <a class="fm-btn fm-btn-book mt-4 w-full" href="${wa(`Hola, quiero reservar cupo para la ${c.nombre} (${c.dia}) en Fish Market.`)}" target="_blank" rel="noopener">Reservar cupo</a>
     </li>`

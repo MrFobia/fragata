@@ -50,7 +50,7 @@ def shell(key, p, main):
   <link rel="icon" href="../assets/img/fishmarket/barco-blanco.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Figtree:wght@400;600;700;800;900&family=Noto+Sans+Canadian+Aboriginal:wght@400;500;600&family=Beth+Ellen&display=swap" rel="stylesheet">{preload}
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Noto+Sans+Canadian+Aboriginal:wght@400;500;600&family=Beth+Ellen&display=swap" rel="stylesheet">{preload}
   <link rel="stylesheet" href="../assets/css/styles.css">
   <script type="module" src="../assets/js/main.js"></script>
   <script type="module" src="../assets/js/{p["js"]}"></script>
